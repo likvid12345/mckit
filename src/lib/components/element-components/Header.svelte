@@ -2,16 +2,26 @@
 	import { current } from '../../../shared.svelte';
 	import Logo from '$lib/components/element-components/Logo.svelte';
 	import Button from '$lib/components/element-components/Button.svelte';
+	import premium from '$lib/assets/general/premium.svg';
 </script>
 
 <header>
 	<Logo />
-	<Button
-		class="premium-button"
-		onclick={() => {
-			current.page = 'premium';
-		}}>Premium</Button
-	>
+	{#if current.page !== 'premium'}
+		<Button
+			class="premium-button"
+			onclick={() => {
+				current.page = 'premium';
+			}}><img src={premium} alt="premium" /> Get Premium</Button
+		>
+	{:else}
+		<Button
+			class="premium-button"
+			onclick={() => {
+				current.page = 'premium';
+			}}><img src={premium} alt="premium" />Buy Premium / $1.99 monthly</Button
+		>
+	{/if}
 </header>
 
 <style>
@@ -21,8 +31,5 @@
 		justify-content: space-between;
 		padding: 1rem;
 		background-color: #242427;
-		:global(.premium-button) {
-			background-color: var(--secondary);
-		}
 	}
 </style>

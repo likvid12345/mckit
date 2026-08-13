@@ -27,6 +27,7 @@
 <div class="general-sorter no-padding">
 	{#each sortableTrims as trim, i (i)}
 		<Button
+			class={selectedTrim === trim ? 'selected-button' : ''}
 			onclick={() => {
 				selectedTrim = trim;
 			}}>{trim}</Button

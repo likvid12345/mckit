@@ -31,6 +31,9 @@
 <div class="general-sorter">
 	{#each sortableContent as contentTab, i (i)}
 		<Button
+			class={selectedContent === contentTab.toLowerCase().replace(/\s/g, '')
+				? 'selected-button'
+				: ''}
 			onclick={() => {
 				selectedContent = contentTab.toLowerCase().replace(/\s/g, '');
 			}}>{contentTab}</Button

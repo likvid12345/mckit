@@ -8,6 +8,7 @@
 <div class="general-sorter no-padding">
 	{#each sortableTabs as tab, i (i)}
 		<Button
+			class={selectedTab === tab ? 'selected-button' : ''}
 			onclick={() => {
 				selectedTab = tab;
 			}}>{tab}</Button

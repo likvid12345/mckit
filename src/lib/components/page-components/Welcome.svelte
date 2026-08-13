@@ -3,6 +3,13 @@
 	import { current } from '../../../shared.svelte';
 	let accepted = $state(false);
 	let step = $state(1);
+	import { setOnboardingCompleted } from '$lib/onboarding';
+
+	async function finishOnboarding() {
+		await setOnboardingCompleted();
+		// @ts-expect-error 123
+		current.page = 'main';
+	}
 </script>
 
 <div class="welcome-wrapper">
@@ -35,6 +42,7 @@
 				<span
 					role="presentation"
 					onclick={() => {
+						// @ts-expect-error 123
 						current.page = 'terms';
 					}}>terms</span
 				>
@@ -46,12 +54,7 @@
 		{#if !accepted}
 			<Button disabled class="welcome-button">Get Started</Button>
 		{:else}
-			<Button
-				class="welcome-button"
-				onclick={() => {
-					current.page = 'main';
-				}}>Get Started</Button
-			>
+			<Button class="welcome-button" onclick={finishOnboarding}>Get Started</Button>
 		{/if}
 	{:else}
 		<Button
@@ -95,6 +98,7 @@
 			padding: 1rem;
 			width: 90%;
 			background-color: white;
+			color: black;
 			font-weight: bold;
 			border: 2px solid black;
 			border-radius: 1rem;

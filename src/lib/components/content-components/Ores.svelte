@@ -21,6 +21,7 @@
 <div class="general-sorter no-padding">
 	{#each sortableOres as ore, i (i)}
 		<Button
+			class={selectedOre === ore ? 'selected-button' : ''}
 			onclick={() => {
 				selectedOre = ore;
 			}}>{ore}</Button

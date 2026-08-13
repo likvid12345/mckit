@@ -41,6 +41,7 @@
 <div class="general-sorter no-padding">
 	{#each sortableTrades as trade, i (i)}
 		<Button
+			class={selectedTrade === trade ? 'selected-button' : ''}
 			onclick={() => {
 				selectedTrade = trade;
 			}}>{trade}</Button
