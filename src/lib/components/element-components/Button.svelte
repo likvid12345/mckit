@@ -37,4 +37,8 @@
 			width: 15px;
 		}
 	}
+	:global(.general-sorter-image) {
+		width: 20px;
+		height: 20px;
+	}
 </style>

@@ -1,7 +1,6 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Header from '$lib/components/element-components/Header.svelte';
-
 	import Ores from '../content-components/Ores.svelte';
 	import Trims from '../content-components/Trims.svelte';
 	import EmeraldTrades from '../content-components/EmeraldTrades.svelte';
@@ -12,6 +11,11 @@
 	import Achievements from '../content-components/Achievements.svelte';
 	import Hotkeys from '../content-components/Hotkeys.svelte';
 
+	import achievements from '$lib/assets/general/achievements.svg';
+	import hotkeys from '$lib/assets/general/hotkeys.svg';
+	import beacon from '$lib/assets/general/beacon.svg';
+	import enchants from '$lib/assets/general/enchants.svg';
+	import potions from '$lib/assets/general/potions.svg';
 	let selectedContent = $state('beacon');
 	let sortableContent = $state([
 		'Beacon',
@@ -36,7 +40,22 @@
 				: ''}
 			onclick={() => {
 				selectedContent = contentTab.toLowerCase().replace(/\s/g, '');
-			}}>{contentTab}</Button
+			}}
+		>
+			{#if contentTab == 'Discord'}
+				<span class="pulse-circle"></span>
+			{:else if contentTab == 'Achievements'}
+				<img class="general-sorter-image" src={achievements} alt="achievements" />
+			{:else if contentTab == 'Hotkeys'}
+				<img class="general-sorter-image" src={hotkeys} alt="hotkeys" />
+			{:else if contentTab == 'Beacon'}
+				<img class="general-sorter-image" src={beacon} alt="beacon" />
+			{:else if contentTab == 'Enchants'}
+				<img class="general-sorter-image" src={enchants} alt="enchants" />
+			{:else if contentTab == 'Potions'}
+				<img class="general-sorter-image" src={potions} alt="potions" />
+			{/if}
+			{contentTab}</Button
 		>
 	{/each}
 </div>
@@ -61,9 +80,3 @@
 		<Discord />
 	{/if}
 </div>
-
-<style>
-	.content-wrapper {
-		padding: 1rem;
-	}
-</style>

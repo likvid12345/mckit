@@ -11,6 +11,7 @@
 		justify-content: flex-start;
 		flex-direction: column;
 		gap: 1rem;
+		padding: 1rem;
 		h1 {
 			color: white;
 		}

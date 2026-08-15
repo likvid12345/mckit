@@ -24,7 +24,7 @@
 	]);
 </script>
 
-<div class="general-sorter no-padding">
+<div class="general-sorter">
 	{#each sortableTrims as trim, i (i)}
 		<Button
 			class={selectedTrim === trim ? 'selected-button' : ''}

@@ -12,7 +12,7 @@
 <style>
 	.achievements-wrapper {
 		position: relative;
-
+		padding: 1rem;
 		h1 {
 			color: white;
 			position: relative;

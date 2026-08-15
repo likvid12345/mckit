@@ -1,6 +1,8 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 
+	import Wheat from './trades-components/Wheat.svelte';
+
 	let selectedTrade = $state('Wheat');
 	let sortableTrades = $state([
 		'Wheat',
@@ -38,7 +40,7 @@
 	]);
 </script>
 
-<div class="general-sorter no-padding">
+<div class="general-sorter">
 	{#each sortableTrades as trade, i (i)}
 		<Button
 			class={selectedTrade === trade ? 'selected-button' : ''}
@@ -51,7 +53,7 @@
 
 <div class="content-wrapper">
 	{#if selectedTrade == 'Wheat'}
-		<p>Wheat</p>
+		<Wheat />
 	{:else if selectedTrade == 'Potato'}
 		<p>Potato</p>
 	{:else if selectedTrade == 'Carrot'}
