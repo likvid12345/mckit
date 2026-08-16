@@ -3,8 +3,8 @@
 </script>
 
 <PotionGuide
-	name="Regeneration"
-	intro="Regenerates your health over time"
+	name="Healing"
+	intro="Restores health instantly the moment you drink it"
 	steps={[
 		{
 			number: 1,
@@ -20,47 +20,37 @@
 		},
 		{
 			number: 2,
-			title: 'Add Ghast Tear',
-			text: 'Add a Ghast Tear to your Awkward Potions to brew Regeneration.',
-			ingredient: { label: 'Ghast Tear' },
+			title: 'Add Glistering Melon Slice',
+			text: 'Add a Glistering Melon Slice to your Awkward Potions to brew Healing.',
+			infoNote:
+				"Glistering Melon Slice isn't mined or found — you craft it yourself with 1 Melon Slice surrounded by 8 Gold Nuggets on a crafting table.",
+			ingredient: { label: 'Glistering Melon Slice' },
 			potions: [
 				{ label: 'Awkward Potion' },
 				{ label: 'Awkward Potion' },
 				{ label: 'Awkward Potion' }
 			],
-			resultPotions: [
-				{ label: 'Regeneration I' },
-				{ label: 'Regeneration I' },
-				{ label: 'Regeneration I' }
-			]
+			resultPotions: [{ label: 'Healing I' }, { label: 'Healing I' }, { label: 'Healing I' }]
 		},
 		{
 			number: 3,
 			sectionLabel: 'Optional upgrades',
-			title: 'Upgrade to Regeneration II',
-			text: 'Add Glowstone Dust to your Regeneration I potions to upgrade them to a stronger, shorter Regeneration II.',
+			title: 'Upgrade to Healing II',
+			text: 'Add Glowstone Dust to your Healing I potions to double the amount of health restored.',
 			ingredient: { label: 'Glowstone Dust' },
-			potions: [
-				{ label: 'Regeneration I' },
-				{ label: 'Regeneration I' },
-				{ label: 'Regeneration I' }
-			],
-			resultPotions: [
-				{ label: 'Regeneration II' },
-				{ label: 'Regeneration II' },
-				{ label: 'Regeneration II' }
-			]
+			potions: [{ label: 'Healing I' }, { label: 'Healing I' }, { label: 'Healing I' }],
+			resultPotions: [{ label: 'Healing II' }, { label: 'Healing II' }, { label: 'Healing II' }]
 		},
 		{
 			number: 4,
 			title: 'Make it a Splash Potion',
-			text: 'Add Gunpowder to any Regeneration potion to turn it into a throwable Splash Potion.',
+			text: 'Add Gunpowder to any Healing potion to turn it into a throwable Splash Potion — useful for healing allies or, thrown at undead mobs, dealing damage instead.',
 			ingredient: { label: 'Gunpowder' },
-			potions: [{ label: 'Regeneration' }, { label: 'Regeneration' }, { label: 'Regeneration' }],
+			potions: [{ label: 'Healing' }, { label: 'Healing' }, { label: 'Healing' }],
 			resultPotions: [
-				{ label: 'Splash Regeneration' },
-				{ label: 'Splash Regeneration' },
-				{ label: 'Splash Regeneration' }
+				{ label: 'Splash Healing' },
+				{ label: 'Splash Healing' },
+				{ label: 'Splash Healing' }
 			]
 		},
 		{
@@ -71,14 +61,14 @@
 				"Dragon's Breath can only be obtained by holding an empty Glass Bottle while fighting the Ender Dragon — it captures the dragon's breath attack clouds during the fight.",
 			ingredient: { label: "Dragon's Breath" },
 			potions: [
-				{ label: 'Splash Regeneration' },
-				{ label: 'Splash Regeneration' },
-				{ label: 'Splash Regeneration' }
+				{ label: 'Splash Healing' },
+				{ label: 'Splash Healing' },
+				{ label: 'Splash Healing' }
 			],
 			resultPotions: [
-				{ label: 'Lingering Regeneration' },
-				{ label: 'Lingering Regeneration' },
-				{ label: 'Lingering Regeneration' }
+				{ label: 'Lingering Healing' },
+				{ label: 'Lingering Healing' },
+				{ label: 'Lingering Healing' }
 			]
 		}
 	]}

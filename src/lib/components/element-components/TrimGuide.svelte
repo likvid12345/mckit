@@ -1,12 +1,29 @@
 <script>
 	import CraftingTable from '$lib/components/element-components/CraftingTable.svelte';
 
-	let { name, rarity, structure, dropChance, duplicateMaterial, colorNote } = $props();
+	let {
+		name,
+		intro,
+		rarity,
+		structure,
+		dropChance,
+		duplicateMaterial,
+		colorNote,
+		locateTitle = 'How to find the structure',
+		locateText,
+		whereTitle = 'Where the chest is',
+		whereText,
+		duplicateTitle = 'How to duplicate it',
+		duplicateText,
+		applyTitle = 'How to apply it',
+		applyText,
+		resultLabel = 'Result'
+	} = $props();
 </script>
 
 <div class="trim-wrapper">
 	<h1 class="page-title">{name}</h1>
-	<p class="intro">A cosmetic pattern you can stamp onto any armor piece.</p>
+	<p class="intro">{intro}</p>
 
 	<div class="stat-row">
 		<div class="stat-card">
@@ -25,34 +42,33 @@
 
 	<div class="divider"></div>
 
-	<h2 class="section-title">Where to find it</h2>
-	<p class="step-text">
-		Smithing templates like this one are found in chests inside {structure}. Bring a few extra
-		inventory slots — loot chests often hold other useful items alongside the template.
-	</p>
+	<h2 class="section-title">{locateTitle}</h2>
+	<p class="step-text">{locateText}</p>
 
 	<div class="divider"></div>
 
-	<h2 class="section-title">How to duplicate it</h2>
-	<p class="step-text">
-		Applying a trim consumes the template, so always duplicate before using your only copy. This
-		recipe works in any slot arrangement — you just need all the ingredients on the grid.
-	</p>
+	<h2 class="section-title">{whereTitle}</h2>
+	<p class="step-text">{whereText}</p>
+
+	<div class="divider"></div>
+
+	<h2 class="section-title">{duplicateTitle}</h2>
+	<p class="step-text">{duplicateText}</p>
 	<CraftingTable
 		items={[
 			{ label: 'Diamond' },
-			{ label: 'Diamond' },
+			{ label: duplicateMaterial },
 			{ label: 'Diamond' },
 			{ label: 'Diamond' },
 			{ label: name + ' Template' },
 			{ label: 'Diamond' },
 			{ label: 'Diamond' },
 			{ label: 'Diamond' },
-			{ label: duplicateMaterial }
+			{ label: 'Diamond' }
 		]}
 	/>
 	<div class="gray-wrapper">
-		<p class="result-label">Result</p>
+		<p class="result-label">{resultLabel}</p>
 		<CraftingTable
 			items={[
 				{ label: '' },
@@ -70,12 +86,8 @@
 
 	<div class="divider"></div>
 
-	<h2 class="section-title">How to apply it</h2>
-	<p class="step-text">
-		Take the template, an armor piece, and any trim material (like Iron Ingot or Copper Ingot) to a
-		Smithing Table. The template and material are consumed, and the trim appears on the armor
-		permanently — trims are purely cosmetic and never affect stats.
-	</p>
+	<h2 class="section-title">{applyTitle}</h2>
+	<p class="step-text">{applyText}</p>
 
 	{#if colorNote}
 		<div class="info-note">

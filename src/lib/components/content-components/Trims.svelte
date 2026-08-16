@@ -2,6 +2,23 @@
 	import Button from '$lib/components/element-components/Button.svelte';
 
 	import Sentry from '$lib/components/content-components/trims-components/Sentry.svelte';
+	import Vex from '$lib/components/content-components/trims-components/Vex.svelte';
+	import Wild from '$lib/components/content-components/trims-components/Wild.svelte';
+	import Coast from '$lib/components/content-components/trims-components/Coast.svelte';
+	import Dune from '$lib/components/content-components/trims-components/Dune.svelte';
+	import Wayfinder from '$lib/components/content-components/trims-components/Wayfinder.svelte';
+	import Raiser from '$lib/components/content-components/trims-components/Raiser.svelte';
+	import Shaper from '$lib/components/content-components/trims-components/Shaper.svelte';
+	import Host from '$lib/components/content-components/trims-components/Host.svelte';
+	import Ward from '$lib/components/content-components/trims-components/Ward.svelte';
+	import Silence from '$lib/components/content-components/trims-components/Silence.svelte';
+	import Tide from '$lib/components/content-components/trims-components/Tide.svelte';
+	import Rib from '$lib/components/content-components/trims-components/Rib.svelte';
+	import Snout from '$lib/components/content-components/trims-components/Snout.svelte';
+	import Eye from '$lib/components/content-components/trims-components/Eye.svelte';
+	import Spire from '$lib/components/content-components/trims-components/Spire.svelte';
+	import Flow from '$lib/components/content-components/trims-components/Flow.svelte';
+	import Bolt from '$lib/components/content-components/trims-components/Bolt.svelte';
 
 	import sentry from '$lib/assets/trims/sentry.svg';
 	import dune from '$lib/assets/trims/dune.svg';
@@ -99,38 +116,38 @@
 	{#if selectedTrim == 'Sentry'}
 		<Sentry />
 	{:else if selectedTrim == 'Vex'}
-		<p>Vex</p>
+		<Vex />
 	{:else if selectedTrim == 'Wild'}
-		<p>Wild</p>
+		<Wild />
 	{:else if selectedTrim == 'Coast'}
-		<p>Coast</p>
+		<Coast />
 	{:else if selectedTrim == 'Dune'}
-		<p>Dune</p>
+		<Dune />
 	{:else if selectedTrim == 'Wayfinder'}
-		<p>Wayfinder</p>
+		<Wayfinder />
 	{:else if selectedTrim == 'Raiser'}
-		<p>Raiser</p>
+		<Raiser />
 	{:else if selectedTrim == 'Shaper'}
-		<p>Shaper</p>
+		<Shaper />
 	{:else if selectedTrim == 'Host'}
-		<p>Host</p>
+		<Host />
 	{:else if selectedTrim == 'Ward'}
-		<p>Ward</p>
+		<Ward />
 	{:else if selectedTrim == 'Silence'}
-		<p>Silence</p>
+		<Silence />
 	{:else if selectedTrim == 'Tide'}
-		<p>Tide</p>
+		<Tide />
 	{:else if selectedTrim == 'Snout'}
-		<p>Snout</p>
+		<Snout />
 	{:else if selectedTrim == 'Rib'}
-		<p>Rib</p>
+		<Rib />
 	{:else if selectedTrim == 'Eye'}
-		<p>Eye</p>
+		<Eye />
 	{:else if selectedTrim == 'Spire'}
-		<p>Spire</p>
+		<Spire />
 	{:else if selectedTrim == 'Flow'}
-		<p>Flow</p>
+		<Flow />
 	{:else if selectedTrim == 'Bolt'}
-		<p>Bolt</p>
+		<Bolt />
 	{/if}
 </div>

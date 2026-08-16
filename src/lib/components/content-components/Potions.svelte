@@ -2,6 +2,7 @@
 	import Button from '$lib/components/element-components/Button.svelte';
 
 	import Regeneration from '$lib/components/content-components/potion-components/Regeneration.svelte';
+	import Healing from '$lib/components/content-components/potion-components/Healing.svelte';
 
 	import fireres from '$lib/assets/potions/fireres.svg';
 	import harming from '$lib/assets/potions/harming.svg';
@@ -102,7 +103,7 @@
 	{#if selectedPotion == 'Regeneration'}
 		<Regeneration />
 	{:else if selectedPotion == 'Healing'}
-		<p>Healing</p>
+		<Healing />
 	{:else if selectedPotion == 'Swiftness'}
 		<p>Swiftness</p>
 	{:else if selectedPotion == 'Fire Resistance'}
