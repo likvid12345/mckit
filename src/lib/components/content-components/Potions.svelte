@@ -139,9 +139,3 @@
 		<p>Wind Charged</p>
 	{/if}
 </div>
-
-<style>
-	.potions-wrapper {
-		padding: 1rem;
-	}
-</style>

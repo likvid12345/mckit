@@ -1,6 +1,6 @@
 <script>
 	import CraftingTable from '$lib/components/element-components/CraftingTable.svelte';
-
+	import emerald from '$lib/assets/trades/emerald.svg';
 	let {
 		title,
 		intro,
@@ -68,9 +68,7 @@
 			</div>
 			<div class="trade-arrow">→</div>
 			<div class="trade-slot receive-slot">
-				{#if receive?.icon}
-					<img src={receive.icon} alt={receive.label} class="trade-icon" />
-				{/if}
+				<img src={emerald} alt="emerald" class="trade-icon" />
 				<p class="trade-name">{receive?.label ?? ''}</p>
 				{#if receive?.amount}
 					<p class="trade-amount">x{receive.amount}</p>
@@ -176,6 +174,9 @@
 		aspect-ratio: 1 / 1;
 		padding: 0.75rem;
 		min-width: 0;
+		img {
+			width: 0.9rem;
+		}
 	}
 
 	.trade-icon {
@@ -206,6 +207,9 @@
 
 	.receive-slot {
 		border-color: var(--secondary);
+		img {
+			width: 0.8rem;
+		}
 	}
 
 	.info-note {

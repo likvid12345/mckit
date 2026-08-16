@@ -1,0 +1,24 @@
+<script>
+	import Trade from '$lib/components/element-components/Trade.svelte';
+</script>
+
+<Trade
+	title="Iron Ingot → Emerald"
+	intro="One of the best trades if you're running an iron farm."
+	jobSiteName="Smithing Table"
+	jobSiteRecipe={[
+		{ label: '' },
+		{ label: 'Iron Ingot' },
+		{ label: 'Iron Ingot' },
+		{ label: '' },
+		{ label: 'Plank' },
+		{ label: 'Plank' },
+		{ label: '' },
+		{ label: 'Plank' },
+		{ label: 'Plank' }
+	]}
+	professionName="Toolsmith"
+	give={{ label: 'Iron Ingot', amount: 4 }}
+	receive={{ label: 'Emerald', amount: 1 }}
+	note="Armorer (Blast Furnace) and Weaponsmith (Grindstone) offer the exact same rate — 4 iron for 1 emerald — so use whichever job site block you already have set up."
+/>

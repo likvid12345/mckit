@@ -1,7 +1,45 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
-
+	import String from './trades-components/String.svelte';
 	import Wheat from './trades-components/Wheat.svelte';
+	import Potato from './trades-components/Potato.svelte';
+	import Carrot from './trades-components/Carrot.svelte';
+	import Beetroot from './trades-components/Beetroot.svelte';
+	import Coal from './trades-components/Coal.svelte';
+	import Stick from './trades-components/Stick.svelte';
+	import Flint from './trades-components/Flint.svelte';
+	import Feather from './trades-components/Feather.svelte';
+	import Tripwirehook from './trades-components/Tripwirehook.svelte';
+	import Leather from './trades-components/Leather.svelte';
+	import Rabbithide from './trades-components/Rabbithide.svelte';
+	import Scute from './trades-components/Scute.svelte';
+	import Paper from './trades-components/Paper.svelte';
+	import Inksac from './trades-components/Inksac.svelte';
+	import GlassPane from './trades-components/GlassPane.svelte';
+	import Compass from './trades-components/Compass.svelte';
+	import Rottenflash from './trades-components/Rottenflash.svelte';
+	import Goldingot from './trades-components/Goldingot.svelte';
+	import Rabitsfoot from './trades-components/Rabitsfoot.svelte';
+	import Netherwart from './trades-components/Netherwart.svelte';
+	import Ironingot from './trades-components/Ironingot.svelte';
+	import Diamond from './trades-components/Diamond.svelte';
+	import Wool from './trades-components/Wool.svelte';
+	import Dye from './trades-components/Dye.svelte';
+
+	import Stone from './trades-components/Stone.svelte';
+	import Clayball from './trades-components/Clayball.svelte';
+	import Rawchicken from './trades-components/Rawchicken.svelte';
+	import Rawporkchop from './trades-components/Rawporkchop.svelte';
+	import Rawrabbit from './trades-components/Rawrabbit.svelte';
+
+	import carrot from '$lib/assets/trades/carrot.svg';
+	import clayball from '$lib/assets/trades/clayball.svg';
+	import coal from '$lib/assets/trades/coal.svg';
+	import paper from '$lib/assets/trades/paper.svg';
+	import potato from '$lib/assets/trades/potato.svg';
+	import stick from '$lib/assets/trades/stick.svg';
+	import stone from '$lib/assets/trades/stone.svg';
+	import wheat from '$lib/assets/trades/wheat.svg';
 
 	let selectedTrade = $state('Wheat');
 	let sortableTrades = $state([
@@ -11,7 +49,6 @@
 		'Beetroot',
 		'Coal',
 		'String',
-		'Gravel',
 		'Stick',
 		'Flint',
 		'Feather',
@@ -20,7 +57,6 @@
 		'Rabbit Hide',
 		'Scute',
 		'Paper',
-		'Book',
 		'Ink Sac',
 		'Glass Pane',
 		'Compass',
@@ -46,7 +82,26 @@
 			class={selectedTrade === trade ? 'selected-button' : ''}
 			onclick={() => {
 				selectedTrade = trade;
-			}}>{trade}</Button
+			}}
+		>
+			{#if trade == 'Wheat'}
+				<img class="general-sorter-image" src={wheat} alt="wheat" />
+			{:else if trade == 'Potato'}
+				<img class="general-sorter-image" src={potato} alt="potato" />
+			{:else if trade == 'Carrot'}
+				<img class="general-sorter-image" src={carrot} alt="carrot" />
+			{:else if trade == 'Coal'}
+				<img class="general-sorter-image" src={coal} alt="coal" />
+			{:else if trade == 'Paper'}
+				<img class="general-sorter-image" src={paper} alt="paper" />
+			{:else if trade == 'Stone'}
+				<img class="general-sorter-image" src={stone} alt="stone" />
+			{:else if trade == 'Clay Ball'}
+				<img class="general-sorter-image" src={clayball} alt="clayball" />
+			{:else if trade == 'Stick'}
+				<img class="general-sorter-image" src={stick} alt="stick" />
+			{/if}
+			{trade}</Button
 		>
 	{/each}
 </div>
@@ -55,66 +110,62 @@
 	{#if selectedTrade == 'Wheat'}
 		<Wheat />
 	{:else if selectedTrade == 'Potato'}
-		<p>Potato</p>
+		<Potato />
 	{:else if selectedTrade == 'Carrot'}
-		<p>Carrot</p>
+		<Carrot />
 	{:else if selectedTrade == 'Beetroot'}
-		<p>Beetroot</p>
+		<Beetroot />
 	{:else if selectedTrade == 'Coal'}
-		<p>Coal</p>
+		<Coal />
 	{:else if selectedTrade == 'String'}
-		<p>String</p>
-	{:else if selectedTrade == 'Gravel'}
-		<p>Gravel</p>
+		<String />
 	{:else if selectedTrade == 'Stick'}
-		<p>Stick</p>
+		<Stick />
 	{:else if selectedTrade == 'Flint'}
-		<p>Flint</p>
+		<Flint />
 	{:else if selectedTrade == 'Feather'}
-		<p>Feather</p>
+		<Feather />
 	{:else if selectedTrade == 'Tripwire Hook'}
-		<p>Tripwire Hook</p>
+		<Tripwirehook />
 	{:else if selectedTrade == 'Leather'}
-		<p>Leather</p>
+		<Leather />
 	{:else if selectedTrade == 'Rabbit Hide'}
-		<p>Rabbit Hide</p>
+		<Rabbithide />
 	{:else if selectedTrade == 'Scute'}
-		<p>Scute</p>
+		<Scute />
 	{:else if selectedTrade == 'Paper'}
-		<p>Paper</p>
-	{:else if selectedTrade == 'Book'}
-		<p>Book</p>
+		<Paper />
 	{:else if selectedTrade == 'Ink Sac'}
-		<p>Ink Sac</p>
+		<Inksac />
 	{:else if selectedTrade == 'Glass Pane'}
-		<p>Glass Pane</p>
+		<GlassPane />
 	{:else if selectedTrade == 'Compass'}
-		<p>Compass</p>
+		<Compass />
 	{:else if selectedTrade == 'Rotten Flesh'}
-		<p>Rotten Flesh</p>
+		<Rottenflash />
 	{:else if selectedTrade == 'Gold Ingot'}
-		<p>Gold Ingot</p>
+		<Goldingot />
 	{:else if selectedTrade == "Rabbit's Foot"}
-		<p>Rabbit's Foot</p>
+		<Rabitsfoot />
 	{:else if selectedTrade == 'Nether Wart'}
-		<p>Nether Wart</p>
+		<Netherwart />
 	{:else if selectedTrade == 'Iron Ingot'}
-		<p>Iron Ingot</p>
+		<Ironingot />
 	{:else if selectedTrade == 'Diamond'}
-		<p>Diamond</p>
+		<Diamond />
 	{:else if selectedTrade == 'Wool'}
-		<p>Wool</p>
+		<Wool />
 	{:else if selectedTrade == 'Dye'}
-		<p>Dye</p>
+		<Dye />
 	{:else if selectedTrade == 'Raw Porkchop'}
-		<p>Raw Porkchop</p>
+		<Rawporkchop />
 	{:else if selectedTrade == 'Raw Chicken'}
-		<p>Raw Chicken</p>
+		<Rawchicken />
 	{:else if selectedTrade == 'Raw Rabbit'}
-		<p>Raw Rabbit</p>
+		<Rawrabbit />
 	{:else if selectedTrade == 'Clay Ball'}
-		<p>Clay Ball</p>
+		<Clayball />
 	{:else if selectedTrade == 'Stone'}
-		<p>Stone</p>
+		<Stone />
 	{/if}
 </div>

@@ -16,6 +16,9 @@
 	import beacon from '$lib/assets/general/beacon.svg';
 	import enchants from '$lib/assets/general/enchants.svg';
 	import potions from '$lib/assets/general/potions.svg';
+	import ores from '$lib/assets/general/ore.svg';
+	import trim from '$lib/assets/general/trim.svg';
+	import emeraldtrade from '$lib/assets/general/emeraldtrade.svg';
 	let selectedContent = $state('beacon');
 	let sortableContent = $state([
 		'Beacon',
@@ -54,6 +57,12 @@
 				<img class="general-sorter-image" src={enchants} alt="enchants" />
 			{:else if contentTab == 'Potions'}
 				<img class="general-sorter-image" src={potions} alt="potions" />
+			{:else if contentTab == 'Ores'}
+				<img class="general-sorter-image" src={ores} alt="ores" />
+			{:else if contentTab == 'Trims'}
+				<img class="general-sorter-image" src={trim} alt="trim" />
+			{:else if contentTab == 'Emerald Trades'}
+				<img class="general-sorter-image" src={emeraldtrade} alt="emeraldtrade" />
 			{/if}
 			{contentTab}</Button
 		>

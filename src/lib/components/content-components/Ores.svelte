@@ -1,6 +1,19 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 
+	import coal from '$lib/assets/ores/coal.svg';
+	import copper from '$lib/assets/ores/copper.svg';
+	import diamond from '$lib/assets/ores/diamond.svg';
+	import lapis from '$lib/assets/ores/lapis.svg';
+	import emerald from '$lib/assets/ores/emerald.svg';
+	import redstone from '$lib/assets/ores/redstone.svg';
+	import quartz from '$lib/assets/ores/quartz.svg';
+	import ancientdebris from '$lib/assets/ores/ancientdebris.svg';
+	import amethyst from '$lib/assets/ores/amethyst.svg';
+	import iron from '$lib/assets/ores/iron.svg';
+	import gold from '$lib/assets/ores/gold.svg';
+
+	import nethergold from '$lib/assets/ores/nethergold.svg';
 	import Coal from './ores-components/Coal.svelte';
 	import Copper from './ores-components/Copper.svelte';
 	import Iron from './ores-components/Iron.svelte';
@@ -36,7 +49,34 @@
 			class={selectedOre === ore ? 'selected-button' : ''}
 			onclick={() => {
 				selectedOre = ore;
-			}}>{ore}</Button
+			}}
+		>
+			{#if ore == 'Coal'}
+				<img class="general-sorter-image" src={coal} alt="coal" />
+			{:else if ore == 'Copper'}
+				<img class="general-sorter-image" src={copper} alt="copper" />
+			{:else if ore == 'Lapis'}
+				<img class="general-sorter-image" src={lapis} alt="lapis" />
+			{:else if ore == 'Diamond'}
+				<img class="general-sorter-image" src={diamond} alt="diamond" />
+			{:else if ore == 'Emerald'}
+				<img class="general-sorter-image" src={emerald} alt="emerald" />
+			{:else if ore == 'Quartz'}
+				<img class="general-sorter-image" src={quartz} alt="quartz" />
+			{:else if ore == 'Redstone'}
+				<img class="general-sorter-image" src={redstone} alt="redstone" />
+			{:else if ore == 'Nether Gold'}
+				<img class="general-sorter-image" src={nethergold} alt="nethergold" />
+			{:else if ore == 'Iron'}
+				<img class="general-sorter-image" src={iron} alt="iron" />
+			{:else if ore == 'Gold'}
+				<img class="general-sorter-image" src={gold} alt="gold" />
+			{:else if ore == 'Amethyst'}
+				<img class="general-sorter-image" src={amethyst} alt="amethyst" />
+			{:else if ore == 'Ancient Debris'}
+				<img class="general-sorter-image" src={ancientdebris} alt="ancientdebris" />
+			{/if}
+			{ore}</Button
 		>
 	{/each}
 </div>
