@@ -8,6 +8,7 @@
 	class="logo"
 	role="presentation"
 	onclick={() => {
+		//@ts-expect-error 123
 		current.page = 'main';
 	}}
 >

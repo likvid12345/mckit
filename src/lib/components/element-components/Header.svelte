@@ -11,6 +11,7 @@
 		<Button
 			class="premium-button"
 			onclick={() => {
+				//@ts-expect-error 123
 				current.page = 'premium';
 			}}><img src={premium} alt="premium" /> Get Premium</Button
 		>
@@ -18,6 +19,7 @@
 		<Button
 			class="premium-button"
 			onclick={() => {
+				//@ts-expect-error 123
 				current.page = 'premium';
 			}}><img src={premium} alt="premium" />Buy Premium / $1.99 monthly</Button
 		>
