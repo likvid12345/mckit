@@ -3,7 +3,23 @@
 
 	import Regeneration from '$lib/components/content-components/potion-components/Regeneration.svelte';
 	import Healing from '$lib/components/content-components/potion-components/Healing.svelte';
-
+	import Swiftness from '$lib/components/content-components/potion-components/Swiftness.svelte';
+	import FireResistance from '$lib/components/content-components/potion-components/FireResistance.svelte';
+	import NightVision from '$lib/components/content-components/potion-components/NightVision.svelte';
+	import Weakness from '$lib/components/content-components/potion-components/Weakness.svelte';
+	import Strength from '$lib/components/content-components/potion-components/Strength.svelte';
+	import Slowness from '$lib/components/content-components/potion-components/Slowness.svelte';
+	import Leaping from '$lib/components/content-components/potion-components/Leaping.svelte';
+	import Harming from '$lib/components/content-components/potion-components/Harming.svelte';
+	import WaterBreathing from '$lib/components/content-components/potion-components/WaterBreathing.svelte';
+	import Invisibility from '$lib/components/content-components/potion-components/Invisibility.svelte';
+	import Poison from '$lib/components/content-components/potion-components/Poison.svelte';
+	import SlowFalling from '$lib/components/content-components/potion-components/SlowFalling.svelte';
+	import TurtleMaster from '$lib/components/content-components/potion-components/TurtleMaster.svelte';
+	import Oozing from '$lib/components/content-components/potion-components/Oozing.svelte';
+	import Weaving from '$lib/components/content-components/potion-components/Weaving.svelte';
+	import Infested from '$lib/components/content-components/potion-components/Infested.svelte';
+	import WindCharged from '$lib/components/content-components/potion-components/WindCharged.svelte';
 	import fireres from '$lib/assets/potions/fireres.svg';
 	import harming from '$lib/assets/potions/harming.svg';
 	import healing from '$lib/assets/potions/healing.svg';
@@ -105,38 +121,38 @@
 	{:else if selectedPotion == 'Healing'}
 		<Healing />
 	{:else if selectedPotion == 'Swiftness'}
-		<p>Swiftness</p>
+		<Swiftness />
 	{:else if selectedPotion == 'Fire Resistance'}
-		<p>Fire Resistance</p>
+		<FireResistance />
 	{:else if selectedPotion == 'Night Vision'}
-		<p>Night Vision</p>
+		<NightVision />
 	{:else if selectedPotion == 'Weakness'}
-		<p>Weakness</p>
+		<Weakness />
 	{:else if selectedPotion == 'Strength'}
-		<p>Strength</p>
+		<Strength />
 	{:else if selectedPotion == 'Slowness'}
-		<p>Slowness</p>
+		<Slowness />
 	{:else if selectedPotion == 'Leaping'}
-		<p>Leaping</p>
+		<Leaping />
 	{:else if selectedPotion == 'Harming'}
-		<p>Harming</p>
+		<Harming />
 	{:else if selectedPotion == 'Water Breathing'}
-		<p>Water Breathing</p>
+		<WaterBreathing />
 	{:else if selectedPotion == 'Invisibility'}
-		<p>Invisibility</p>
+		<Invisibility />
 	{:else if selectedPotion == 'Poison'}
-		<p>Poison</p>
+		<Poison />
 	{:else if selectedPotion == 'Slow Falling'}
-		<p>Slow Falling</p>
+		<SlowFalling />
 	{:else if selectedPotion == 'Turtle Master'}
-		<p>Turtle Master</p>
+		<TurtleMaster />
 	{:else if selectedPotion == 'Oozing'}
-		<p>Oozing</p>
+		<Oozing />
 	{:else if selectedPotion == 'Weaving'}
-		<p>Weaving</p>
+		<Weaving />
 	{:else if selectedPotion == 'Infested'}
-		<p>Infested</p>
+		<Infested />
 	{:else if selectedPotion == 'Wind Charged'}
-		<p>Wind Charged</p>
+		<WindCharged />
 	{/if}
 </div>
