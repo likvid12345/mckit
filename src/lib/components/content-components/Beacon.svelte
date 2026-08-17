@@ -1,3 +1,7 @@
+<script>
+	import Footer from '$lib/components/element-components/Footer.svelte';
+</script>
+
 <div class="beacon-wrapper">
 	<h1 class="page-title">Beacon Guide</h1>
 	<p class="intro">This is the simplest beacon guide ever. Let's dive right into it.</p>
@@ -65,6 +69,7 @@
 		</ul>
 	</div>
 </div>
+<Footer />
 
 <style>
 	.beacon-wrapper {

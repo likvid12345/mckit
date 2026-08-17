@@ -1,6 +1,8 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 
+	import Footer from '$lib/components/element-components/Footer.svelte';
+
 	import Regeneration from '$lib/components/content-components/potion-components/Regeneration.svelte';
 	import Healing from '$lib/components/content-components/potion-components/Healing.svelte';
 	import Swiftness from '$lib/components/content-components/potion-components/Swiftness.svelte';
@@ -156,3 +158,4 @@
 		<WindCharged />
 	{/if}
 </div>
+<Footer />

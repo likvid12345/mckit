@@ -1,5 +1,6 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
 
 	import Sentry from '$lib/components/content-components/trims-components/Sentry.svelte';
 	import Vex from '$lib/components/content-components/trims-components/Vex.svelte';
@@ -151,3 +152,4 @@
 		<Bolt />
 	{/if}
 </div>
+<Footer />

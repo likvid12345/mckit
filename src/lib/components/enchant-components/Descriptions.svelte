@@ -1,5 +1,6 @@
 <script>
 	import EnchantCard from '$lib/components/element-components/EnchantCard.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
 
 	let enchants = $state([
 		{
@@ -194,6 +195,7 @@
 		/>
 	{/each}
 </div>
+<Footer />
 
 <style>
 	.enchants-wrapper {
