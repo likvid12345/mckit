@@ -1,4 +1,5 @@
 <script>
+	import rawchicken from '$lib/assets/trades/rawchicken.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Butcher"
-	give={{ label: 'Raw Chicken', amount: 14 }}
+	give={{ label: 'Raw Chicken', amount: 14, icon: rawchicken }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade has a 50% chance to appear at Novice level. Raw Porkchop is a better rate (7:1) if your farm supports both animals."
 />

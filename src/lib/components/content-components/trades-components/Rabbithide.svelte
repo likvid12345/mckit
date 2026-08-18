@@ -1,4 +1,6 @@
 <script>
+	import rabbithide from '$lib/assets/trades/rabbithide.svg';
+
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +20,7 @@
 		{ label: 'Iron Ingot' }
 	]}
 	professionName="Leatherworker"
-	give={{ label: 'Rabbit Hide', amount: 9 }}
+	give={{ label: 'Rabbit Hide', amount: 9, icon: rabbithide }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks once the Leatherworker reaches Journeyman level. You can also craft 4 Rabbit Hide into 1 Leather and sell that instead, at a slightly better rate."
 />

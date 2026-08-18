@@ -1,5 +1,6 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import beetroot from '$lib/assets/trades/beetroot.svg';
 </script>
 
 <Trade
@@ -18,7 +19,7 @@
 		{ label: 'Wood Slab' }
 	]}
 	professionName="Farmer"
-	give={{ label: 'Beetroot', amount: 15 }}
+	give={{ label: 'Beetroot', amount: 15, icon: beetroot }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="Trades run out after a limited number of uses. Let the villager sleep in a nearby bed overnight, or wait for the restock timer, to refresh their trades."
 />

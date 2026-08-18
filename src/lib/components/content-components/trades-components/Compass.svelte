@@ -1,4 +1,6 @@
 <script>
+	import compass from '$lib/assets/trades/compass.svg';
+
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +20,7 @@
 		{ label: '' }
 	]}
 	professionName="Cartographer"
-	give={{ label: 'Compass', amount: 1 }}
+	give={{ label: 'Compass', amount: 1, icon: compass }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks at Journeyman level. Since a compass costs 4 Iron Ingots + 1 Redstone Dust to craft, it's not actually a cheap trade despite the 1:1 ratio."
 />

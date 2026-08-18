@@ -1,4 +1,5 @@
 <script>
+	import glasspane from '$lib/assets/trades/glasspane.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Cartographer"
-	give={{ label: 'Glass Pane', amount: 11 }}
+	give={{ label: 'Glass Pane', amount: 11, icon: glasspane }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks at Apprentice level. Sand is essentially free near any beach or desert, making this an easy renewable emerald source once the Cartographer is leveled up."
 />

@@ -1,4 +1,6 @@
 <script>
+	import ironingot from '$lib/assets/trades/ironingot.svg';
+
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +20,7 @@
 		{ label: 'Wood Plank' }
 	]}
 	professionName="Toolsmith"
-	give={{ label: 'Iron Ingot', amount: 4 }}
+	give={{ label: 'Iron Ingot', amount: 4, icon: ironingot }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="Armorer (Blast Furnace) and Weaponsmith (Grindstone) offer the exact same rate — 4 iron for 1 emerald — so use whichever job site block you already have set up."
 />

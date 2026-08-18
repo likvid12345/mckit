@@ -1,4 +1,5 @@
 <script>
+	import tripwirehook from '$lib/assets/trades/tripwirehook.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Fletcher"
-	give={{ label: 'Tripwire Hook', amount: 8 }}
+	give={{ label: 'Tripwire Hook', amount: 8, icon: tripwirehook }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only appears at Master level — the very last tier. You'll need to level the Fletcher up through Stick, Flint, String, and Feather trades first."
 />

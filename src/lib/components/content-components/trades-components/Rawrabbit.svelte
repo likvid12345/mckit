@@ -1,5 +1,6 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import rawrabbit from '$lib/assets/trades/rawrabbit.svg';
 </script>
 
 <Trade
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Butcher"
-	give={{ label: 'Raw Rabbit', amount: 4 }}
+	give={{ label: 'Raw Rabbit', amount: 4, icon: rawrabbit }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade has a 40% chance to appear at Novice level. Rabbits breed slower than pigs or chickens, so this rate is great, but harder to farm at scale."
 />

@@ -1,5 +1,6 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import scute from '$lib/assets/trades/scute.svg';
 </script>
 
 <Trade
@@ -18,7 +19,7 @@
 		{ label: 'Iron Ingot' }
 	]}
 	professionName="Leatherworker"
-	give={{ label: 'Scute', amount: 4 }}
+	give={{ label: 'Scute', amount: 4, icon: scute }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks at Expert level. Clerics offer the exact same rate — 4 scutes for 1 emerald — if you'd rather use a Brewing Stand villager instead."
 />

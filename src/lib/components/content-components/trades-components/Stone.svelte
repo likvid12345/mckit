@@ -1,5 +1,6 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import stone from '$lib/assets/trades/stone.svg';
 </script>
 
 <Trade
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Mason"
-	give={{ label: 'Stone', amount: 20 }}
+	give={{ label: 'Stone', amount: 20, icon: stone }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade is guaranteed at Novice level. Smelt spare cobblestone in a furnace to turn it into stone — an easy way to keep this trade stocked."
 />

@@ -42,6 +42,28 @@
 	import stick from '$lib/assets/trades/stick.svg';
 	import stone from '$lib/assets/trades/stone.svg';
 	import wheat from '$lib/assets/trades/wheat.svg';
+	import string from '$lib/assets/trades/string.svg';
+	import beetroot from '$lib/assets/trades/beetroot.svg';
+	import rottenflash from '$lib/assets/trades/rottenflesh.svg';
+	import rawporkchop from '$lib/assets/trades/rawporkchop.svg';
+	import rawrabbit from '$lib/assets/trades/rawrabbit.svg';
+	import rawchicken from '$lib/assets/trades/rawchicken.svg';
+	import scute from '$lib/assets/trades/scute.svg';
+	import netherwart from '$lib/assets/trades/netherwart.svg';
+	import dye from '$lib/assets/trades/dye.svg';
+	import ironingot from '$lib/assets/trades/ironingot.svg';
+	import goldingot from '$lib/assets/trades/goldingot.svg';
+	import flint from '$lib/assets/trades/flint.svg';
+	import tripwirehook from '$lib/assets/trades/tripwirehook.svg';
+	import wool from '$lib/assets/trades/wool.svg';
+	import diamond from '$lib/assets/trades/diamond.svg';
+	import inksac from '$lib/assets/trades/inksac.svg';
+	import feather from '$lib/assets/trades/feather.svg';
+	import leather from '$lib/assets/trades/leather.svg';
+	import rabbithide from '$lib/assets/trades/rabbithide.svg';
+	import rabbitsfoot from '$lib/assets/trades/rabbitsfoot.svg';
+	import glasspane from '$lib/assets/trades/glasspane.svg';
+	import compass from '$lib/assets/trades/compass.svg';
 
 	let selectedTrade = $state('Wheat');
 	let sortableTrades = $state([
@@ -102,6 +124,50 @@
 				<img class="general-sorter-image" src={clayball} alt="clayball" />
 			{:else if trade == 'Stick'}
 				<img class="general-sorter-image" src={stick} alt="stick" />
+			{:else if trade == 'String'}
+				<img class="general-sorter-image" src={string} alt="string" />
+			{:else if trade == 'Flint'}
+				<img class="general-sorter-image" src={flint} alt="flint" />
+			{:else if trade == 'Beetroot'}
+				<img class="general-sorter-image" src={beetroot} alt="beetroot" />
+			{:else if trade == 'Rotten Flesh'}
+				<img class="general-sorter-image" src={rottenflash} alt="rottenflesh" />
+			{:else if trade == 'Raw Porkchop'}
+				<img class="general-sorter-image" src={rawporkchop} alt="rawporkchop" />
+			{:else if trade == 'Raw Rabbit'}
+				<img class="general-sorter-image" src={rawrabbit} alt="rawrabbit" />
+			{:else if trade == 'Raw Chicken'}
+				<img class="general-sorter-image" src={rawchicken} alt="rawchicken" />
+			{:else if trade == 'Scute'}
+				<img class="general-sorter-image" src={scute} alt="scute" />
+			{:else if trade == 'Tripwire Hook'}
+				<img class="general-sorter-image" src={tripwirehook} alt="tripwirehook" />
+			{:else if trade == 'Nether Wart'}
+				<img class="general-sorter-image" src={netherwart} alt="netherwart" />
+			{:else if trade == 'Dye'}
+				<img class="general-sorter-image" src={dye} alt="dye" />
+			{:else if trade == 'Iron Ingot'}
+				<img class="general-sorter-image" src={ironingot} alt="ironingot" />
+			{:else if trade == 'Gold Ingot'}
+				<img class="general-sorter-image" src={goldingot} alt="goldingot" />
+			{:else if trade == 'Wool'}
+				<img class="general-sorter-image" src={wool} alt="wool" />
+			{:else if trade == 'Feather'}
+				<img class="general-sorter-image" src={feather} alt="feather" />
+			{:else if trade == 'Leather'}
+				<img class="general-sorter-image" src={leather} alt="leather" />
+			{:else if trade == 'Rabbit Hide'}
+				<img class="general-sorter-image" src={rabbithide} alt="rabbithide" />
+			{:else if trade == 'Ink Sac'}
+				<img class="general-sorter-image" src={inksac} alt="inksac" />
+			{:else if trade == 'Diamond'}
+				<img class="general-sorter-image" src={diamond} alt="diamond" />
+			{:else if trade == "Rabbit's Foot"}
+				<img class="general-sorter-image" src={rabbitsfoot} alt="rabbitsfoot" />
+			{:else if trade == 'Glass Pane'}
+				<img class="general-sorter-image" src={glasspane} alt="glasspane" />
+			{:else if trade == 'Compass'}
+				<img class="general-sorter-image" src={compass} alt="compass" />
 			{/if}
 			{trade}</Button
 		>

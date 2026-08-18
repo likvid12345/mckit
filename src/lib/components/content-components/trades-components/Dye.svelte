@@ -1,4 +1,5 @@
 <script>
+	import dye from '$lib/assets/trades/dye.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Shepherd"
-	give={{ label: 'Dye', amount: 12 }}
+	give={{ label: 'Dye', amount: 12, icon: dye }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade unlocks at Apprentice level. Any of the 16 dye colors counts toward this trade, though which colors are accepted expands further at Journeyman and Expert levels."
 />

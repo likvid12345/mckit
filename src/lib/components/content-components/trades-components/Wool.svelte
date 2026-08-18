@@ -1,4 +1,5 @@
 <script>
+	import wool from '$lib/assets/trades/wool.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
 </script>
 
@@ -18,7 +19,7 @@
 		{ label: '' }
 	]}
 	professionName="Shepherd"
-	give={{ label: 'Wool', amount: 18 }}
+	give={{ label: 'Wool', amount: 18, icon: wool }}
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade is guaranteed at Novice level, though the color offered is random — white, gray, brown, or black."
 />
