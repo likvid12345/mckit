@@ -21,7 +21,7 @@
 			onclick={() => {
 				//@ts-expect-error 123
 				current.page = 'premium';
-			}}><img src={premium} alt="premium" />Buy Premium / $1.99 monthly</Button
+			}}><img src={premium} alt="premium" />Buy Premium</Button
 		>
 	{/if}
 </header>
