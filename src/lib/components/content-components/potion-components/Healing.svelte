@@ -1,5 +1,16 @@
 <script>
+	import { onMount } from 'svelte';
+	import { premium, refreshPremiumStatus } from '$lib/premium';
+	import { buyPremium } from '$lib/purchases';
 	import PotionGuide from '$lib/components/element-components/PotionGuide.svelte';
+	onMount(refreshPremiumStatus);
+	async function handleBuy() {
+		const success = await buyPremium();
+		if (success) {
+			premium.set(true);
+		}
+	}
+
 	let isPremium = $state(false);
 </script>
 
