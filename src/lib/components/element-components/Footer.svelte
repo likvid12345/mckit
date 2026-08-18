@@ -16,6 +16,14 @@
 			current.page = 'terms';
 		}}>Terms</span
 	>
+
+	<span
+		role="presentation"
+		onclick={() => {
+			//@ts-expect-error 123
+			current.page = 'privacy';
+		}}>Privacy Policy</span
+	>
 	<b
 		>This app is not an official Minecraft product. It is not approved by or associated with Mojang
 		Studios or Microsoft.</b

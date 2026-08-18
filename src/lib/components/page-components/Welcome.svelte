@@ -46,6 +46,15 @@
 						current.page = 'terms';
 					}}>terms</span
 				>
+				and
+
+				<span
+					role="presentation"
+					onclick={() => {
+						// @ts-expect-error 123
+						current.page = 'privacy';
+					}}>privacy policy</span
+				>
 			</p>
 		</label>
 	{/if}
