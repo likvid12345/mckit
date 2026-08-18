@@ -7,15 +7,15 @@
 	intro="The best crop-to-emerald ratio a Farmer offers."
 	jobSiteName="Composter"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' }
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' }
 	]}
 	professionName="Farmer"
 	give={{ label: 'Beetroot', amount: 15 }}

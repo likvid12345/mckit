@@ -8,15 +8,15 @@
 	intro="Another simple crop trade to keep your emerald stash growing."
 	jobSiteName="Composter"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' }
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' }
 	]}
 	professionName="Farmer"
 	give={{ label: 'Potato', amount: 26, icon: potato }}

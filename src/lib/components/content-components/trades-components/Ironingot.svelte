@@ -11,11 +11,11 @@
 		{ label: 'Iron Ingot' },
 		{ label: 'Iron Ingot' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' }
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' }
 	]}
 	professionName="Toolsmith"
 	give={{ label: 'Iron Ingot', amount: 4 }}

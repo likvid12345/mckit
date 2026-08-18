@@ -8,15 +8,15 @@
 	intro="Turn your wheat farm into a steady emerald income."
 	jobSiteName="Composter"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' }
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' }
 	]}
 	professionName="Farmer"
 	give={{ label: 'Wheat', amount: 20, icon: wheat }}

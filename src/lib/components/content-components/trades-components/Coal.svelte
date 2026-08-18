@@ -8,15 +8,15 @@
 	intro="A great way to turn spare coal into emeralds early on."
 	jobSiteName="Barrel"
 	jobSiteRecipe={[
-		{ label: 'Plank' },
-		{ label: 'Slab' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
-		{ label: 'Slab' },
-		{ label: 'Plank' }
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Plank' }
 	]}
 	professionName="Fisherman"
 	give={{ label: 'Coal', amount: 10, icon: coal }}

@@ -8,13 +8,13 @@
 	jobSiteName="Smoker"
 	jobSiteRecipe={[
 		{ label: '' },
-		{ label: 'Log' },
+		{ label: 'Wood Log' },
 		{ label: '' },
-		{ label: 'Log' },
+		{ label: 'Wood Log' },
 		{ label: 'Furnace' },
-		{ label: 'Log' },
+		{ label: 'Wood Log' },
 		{ label: '' },
-		{ label: 'Log' },
+		{ label: 'Wood Log' },
 		{ label: '' }
 	]}
 	professionName="Butcher"

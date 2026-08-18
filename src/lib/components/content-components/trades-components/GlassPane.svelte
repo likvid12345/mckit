@@ -10,11 +10,11 @@
 		{ label: 'Paper' },
 		{ label: 'Paper' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' }
 	]}
 	professionName="Cartographer"

@@ -10,11 +10,11 @@
 		{ label: 'Flint' },
 		{ label: 'Flint' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' },
-		{ label: 'Plank' },
-		{ label: 'Plank' },
+		{ label: 'Wood Plank' },
+		{ label: 'Wood Plank' },
 		{ label: '' }
 	]}
 	professionName="Fletcher"

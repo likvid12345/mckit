@@ -8,14 +8,14 @@
 	intro="One of the easiest renewable emerald sources — sugar cane grows almost anywhere."
 	jobSiteName="Lectern"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
 		{ label: 'Bookshelf' },
 		{ label: '' },
 		{ label: '' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' }
 	]}
 	professionName="Librarian"

@@ -8,15 +8,15 @@
 	intro="Yet another easy Farmer trade to add to your emerald income."
 	jobSiteName="Composter"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' }
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' }
 	]}
 	professionName="Farmer"
 	give={{ label: 'Carrot', amount: 22, icon: carrot }}

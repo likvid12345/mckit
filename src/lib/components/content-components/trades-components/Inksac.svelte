@@ -7,14 +7,14 @@
 	intro="A niche but easy trade if you're farming squids anyway."
 	jobSiteName="Lectern"
 	jobSiteRecipe={[
-		{ label: 'Slab' },
-		{ label: 'Slab' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' },
 		{ label: 'Bookshelf' },
 		{ label: '' },
 		{ label: '' },
-		{ label: 'Slab' },
+		{ label: 'Wood Slab' },
 		{ label: '' }
 	]}
 	professionName="Librarian"
