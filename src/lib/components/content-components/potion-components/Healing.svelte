@@ -1,20 +1,9 @@
 <script>
-	import { onMount } from 'svelte';
-	import { premium, refreshPremiumStatus } from '$lib/premium';
-	import { buyPremium } from '$lib/purchases';
 	import PotionGuide from '$lib/components/element-components/PotionGuide.svelte';
-	onMount(refreshPremiumStatus);
-	async function handleBuy() {
-		const success = await buyPremium();
-		if (success) {
-			premium.set(true);
-		}
-	}
-
-	let isPremium = $state(false);
+	import { current } from '../../../../shared.svelte';
 </script>
 
-{#if isPremium}
+{#if current.isPremium}
 	<PotionGuide
 		name="Healing"
 		intro="Restores health instantly the moment you drink it"
@@ -87,5 +76,5 @@
 		]}
 	/>
 {:else}
-	<p>buy premium to unlock this</p>
+	<p>buy prem lol</p>
 {/if}

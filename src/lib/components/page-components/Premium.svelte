@@ -2,10 +2,27 @@
 	import Header from '$lib/components/element-components/Header.svelte';
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '../element-components/Footer.svelte';
-
-	let { onPurchase = () => {} } = $props();
+	import { purchasePremium } from '$lib/premium';
+	import { current } from '../../../shared.svelte';
 
 	let selectedPlan = $state('year');
+	let purchasing = $state(false);
+
+	async function handlePurchase() {
+		purchasing = true;
+		try {
+			const success = await purchasePremium(selectedPlan);
+			console.log('Purchase success value:', success);
+			if (success) {
+				current.page = 'main';
+			} else {
+				console.warn('Purchase returned false — entitlement not active');
+			}
+		} catch (e) {
+			console.error('Purchase failed', e.message, e);
+		}
+		purchasing = false;
+	}
 
 	const features = [
 		{
@@ -70,8 +87,9 @@
 		{/each}
 	</div>
 
-	<Button class="premium-button" onclick={() => onPurchase(selectedPlan)}>Unlock Premium</Button>
-
+	<Button class="premium-button" disabled={purchasing} onclick={handlePurchase}>
+		{purchasing ? 'Processing...' : 'Unlock Premium'}
+	</Button>
 	<p class="fine-print">Cancel anytime. Payment is charged to your Google Play account.</p>
 </div>
 <Footer />

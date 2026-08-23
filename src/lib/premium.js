@@ -1,8 +1,12 @@
-import { writable } from 'svelte/store';
-import { isPremium } from './purchases';
-
-export const premium = writable(false);
+import { isPremium as checkPremium, buyPremium } from './purchases';
+import { current } from '../shared.svelte';
 
 export async function refreshPremiumStatus() {
-	premium.set(await isPremium());
+	current.isPremium = await checkPremium();
+}
+
+export async function purchasePremium(planId) {
+	const success = await buyPremium(planId);
+	current.isPremium = success;
+	return success;
 }
