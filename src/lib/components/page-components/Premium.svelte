@@ -27,9 +27,10 @@
 	const features = [
 		{
 			title: 'Best Enchants',
-			desc: 'Full armor, tool, and utility recommendations — everything except weapons'
+			desc: 'Full armor, tool, weapons and utility recommendations'
 		},
 		{ title: 'Total Table', desc: 'Track and check off every enchanted book you still need' },
+		{ title: 'Best Enchants', desc: 'Best enchants for every tool' },
 		{ title: '14 Potions', desc: 'Every brewing recipe, upgrade, and splash/lingering variant' },
 		{
 			title: '8 Ores',

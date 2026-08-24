@@ -1,40 +1,83 @@
 <div class="achievements-wrapper">
-	<h1>
-		Achievements
-		<span class="soon-badge">soon</span>
-	</h1>
-	<p>
-		We're building a super simple guide on how to get every achievement — it'll cover all
-		achievements from every dimension.
-	</p>
+	<div class="achievement-card">
+		<div class="card-header">
+			<div>
+				<span class="eyebrow">GUIDES</span>
+				<h1>Achievements</h1>
+			</div>
+
+			<span class="soon-badge">SOON</span>
+		</div>
+
+		<div class="divider"></div>
+
+		<p>
+			We're building a simple guide on how to get every achievement, covering all achievements from
+			every dimension.
+		</p>
+	</div>
 </div>
 
 <style>
 	.achievements-wrapper {
-		position: relative;
 		padding: 1rem;
-		h1 {
-			color: white;
-			position: relative;
-			display: inline-block;
-		}
+	}
 
-		.soon-badge {
-			position: absolute;
-			top: -10px;
-			right: -45px;
-			background-color: var(--secondary);
-			color: white;
-			font-size: 0.75rem;
-			font-weight: bold;
-			padding: 2px 8px;
-			border-radius: 4px;
-			transform: rotate(-12deg);
-		}
+	.achievement-card {
+		max-width: 700px;
+		padding: 1.5rem;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.025);
+	}
 
-		p {
-			padding: 1rem 0;
-			color: whitesmoke;
-		}
+	.card-header {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.eyebrow {
+		display: block;
+		margin-bottom: 0.35rem;
+		color: var(--secondary);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.12em;
+	}
+
+	h1 {
+		margin: 0;
+		color: white;
+		font-size: 1.7rem;
+		line-height: 1.2;
+	}
+
+	.soon-badge {
+		flex-shrink: 0;
+		margin-top: 0.2rem;
+		padding: 0.3rem 0.65rem;
+		border: 1px solid color-mix(in srgb, var(--secondary) 50%, transparent);
+		border-radius: 6px;
+		background: color-mix(in srgb, var(--secondary) 15%, transparent);
+		color: var(--secondary);
+		font-size: 0.65rem;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+	}
+
+	.divider {
+		height: 1px;
+		margin: 1.25rem 0;
+		background: rgba(255, 255, 255, 0.07);
+	}
+
+	p {
+		max-width: 600px;
+		margin: 0;
+		color: rgba(255, 255, 255, 0.65);
+		font-size: 0.95rem;
+		line-height: 1.7;
 	}
 </style>
