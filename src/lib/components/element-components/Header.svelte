@@ -7,13 +7,18 @@
 
 <header>
 	<Logo />
+	<button
+		onclick={() => {
+			current.isPremium = false;
+		}}>PREM</button
+	>
 	{#if current.page !== 'premium'}
 		<Button
 			class="premium-button"
 			onclick={() => {
 				//@ts-expect-error 123
 				current.page = 'premium';
-			}}><img src={premium} alt="premium" /> Get Premium</Button
+			}}><img src={premium} alt="premium" />Get Premium</Button
 		>
 	{:else}
 		<Button
@@ -21,7 +26,7 @@
 			onclick={() => {
 				//@ts-expect-error 123
 				current.page = 'premium';
-			}}><img src={premium} alt="premium" />Buy Premium</Button
+			}}><img src={premium} alt="premium" />Premium</Button
 		>
 	{/if}
 </header>
