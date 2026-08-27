@@ -7,11 +7,11 @@
 
 <header>
 	<Logo />
-	<button
+	<!-- <button
 		onclick={() => {
 			current.isPremium = false;
 		}}>PREM</button
-	>
+	> -->
 	{#if current.page !== 'premium'}
 		<Button
 			class="premium-button"

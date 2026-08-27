@@ -14,7 +14,10 @@ const PLAN_MAP = {
 	year: '$rc_annual',
 	lifetime: '$rc_lifetime'
 };
-
+export async function restorePurchases() {
+	const { customerInfo } = await Purchases.restorePurchases();
+	return customerInfo.entitlements.active['mckit Premium'] !== undefined;
+}
 export async function buyPremium(planId) {
 	const { current } = await Purchases.getOfferings();
 	const rcIdentifier = PLAN_MAP[planId] ?? planId;

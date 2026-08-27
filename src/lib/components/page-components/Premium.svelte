@@ -3,10 +3,12 @@
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '../element-components/Footer.svelte';
 	import { purchasePremium } from '$lib/premium';
+	import { restorePurchases } from '$lib/purchases';
 	import { current } from '../../../shared.svelte';
 
 	let selectedPlan = $state('year');
 	let purchasing = $state(false);
+	let restoring = $state(false);
 
 	async function handlePurchase() {
 		purchasing = true;
@@ -22,6 +24,22 @@
 			console.error('Purchase failed', e.message, e);
 		}
 		purchasing = false;
+	}
+
+	async function handleRestore() {
+		restoring = true;
+		try {
+			const success = await restorePurchases();
+			if (success) {
+				current.isPremium = true;
+				current.page = 'main';
+			} else {
+				alert('No previous purchase found for this account.');
+			}
+		} catch (e) {
+			console.error('Restore failed', e);
+		}
+		restoring = false;
 	}
 
 	const features = [
@@ -91,6 +109,9 @@
 	<Button class="premium-button" disabled={purchasing} onclick={handlePurchase}>
 		{purchasing ? 'Processing...' : 'Unlock Premium'}
 	</Button>
+	<button class="restore-link" onclick={handleRestore} disabled={restoring}>
+		{restoring ? 'Restoring...' : 'Restore Purchases'}
+	</button>
 	<p class="fine-print">Cancel anytime. Payment is charged to your Google Play account.</p>
 </div>
 <Footer />
@@ -247,5 +268,11 @@
 			text-align: center;
 			margin: 0.25rem 0 0;
 		}
+	}
+	.restore-link {
+		background-color: transparent;
+		border: 0;
+		color: white;
+		text-decoration: underline;
 	}
 </style>

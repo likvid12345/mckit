@@ -1,6 +1,8 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import { current } from '../../../shared.svelte';
+	import premium from '$lib/assets/general/premium.svg';
 
 	import Sentry from '$lib/components/content-components/trims-components/Sentry.svelte';
 	import Vex from '$lib/components/content-components/trims-components/Vex.svelte';
@@ -41,6 +43,7 @@
 	import bolt from '$lib/assets/trims/bolt.svg';
 
 	let selectedTrim = $state('Sentry');
+
 	let sortableTrims = $state([
 		'Sentry',
 		'Vex',
@@ -65,51 +68,58 @@
 
 <div class="general-sorter">
 	{#each sortableTrims as trim, i (i)}
-		<Button
-			class={selectedTrim === trim ? 'selected-button' : ''}
-			onclick={() => {
-				selectedTrim = trim;
-			}}
-		>
-			{#if trim == 'Sentry'}
-				<img class="general-sorter-image" src={sentry} alt="sentry" />
-			{:else if trim == 'Dune'}
-				<img class="general-sorter-image" src={dune} alt="dune" />
-			{:else if trim == 'Coast'}
-				<img class="general-sorter-image" src={coast} alt="coast" />
-			{:else if trim == 'Wild'}
-				<img class="general-sorter-image" src={wild} alt="wild" />
-			{:else if trim == 'Ward'}
-				<img class="general-sorter-image" src={ward} alt="ward" />
-			{:else if trim == 'Eye'}
-				<img class="general-sorter-image" src={eye} alt="eye" />
-			{:else if trim == 'Vex'}
-				<img class="general-sorter-image" src={vex} alt="vex" />
-			{:else if trim == 'Tide'}
-				<img class="general-sorter-image" src={tide} alt="tide" />
-			{:else if trim == 'Snout'}
-				<img class="general-sorter-image" src={snout} alt="snout" />
-			{:else if trim == 'Rib'}
-				<img class="general-sorter-image" src={rib} alt="rib" />
-			{:else if trim == 'Spire'}
-				<img class="general-sorter-image" src={spire} alt="spire" />
-			{:else if trim == 'Wayfinder'}
-				<img class="general-sorter-image" src={wayfinder} alt="wayfinder" />
-			{:else if trim == 'Shaper'}
-				<img class="general-sorter-image" src={shaper} alt="shaper" />
-			{:else if trim == 'Raiser'}
-				<img class="general-sorter-image" src={raiser} alt="raiser" />
-			{:else if trim == 'Host'}
-				<img class="general-sorter-image" src={host} alt="host" />
-			{:else if trim == 'Flow'}
-				<img class="general-sorter-image" src={flow} alt="flow" />
-			{:else if trim == 'Bolt'}
-				<img class="general-sorter-image" src={bolt} alt="bolt" />
-			{:else if trim == 'Silence'}
-				<img class="general-sorter-image" src={silence} alt="silence" />
+		<div class="tab-wrapper">
+			<Button
+				class={selectedTrim === trim ? 'selected-button' : ''}
+				onclick={() => {
+					selectedTrim = trim;
+				}}
+			>
+				{#if trim == 'Sentry'}
+					<img class="general-sorter-image" src={sentry} alt="sentry" />
+				{:else if trim == 'Dune'}
+					<img class="general-sorter-image" src={dune} alt="dune" />
+				{:else if trim == 'Coast'}
+					<img class="general-sorter-image" src={coast} alt="coast" />
+				{:else if trim == 'Wild'}
+					<img class="general-sorter-image" src={wild} alt="wild" />
+				{:else if trim == 'Ward'}
+					<img class="general-sorter-image" src={ward} alt="ward" />
+				{:else if trim == 'Eye'}
+					<img class="general-sorter-image" src={eye} alt="eye" />
+				{:else if trim == 'Vex'}
+					<img class="general-sorter-image" src={vex} alt="vex" />
+				{:else if trim == 'Tide'}
+					<img class="general-sorter-image" src={tide} alt="tide" />
+				{:else if trim == 'Snout'}
+					<img class="general-sorter-image" src={snout} alt="snout" />
+				{:else if trim == 'Rib'}
+					<img class="general-sorter-image" src={rib} alt="rib" />
+				{:else if trim == 'Spire'}
+					<img class="general-sorter-image" src={spire} alt="spire" />
+				{:else if trim == 'Wayfinder'}
+					<img class="general-sorter-image" src={wayfinder} alt="wayfinder" />
+				{:else if trim == 'Shaper'}
+					<img class="general-sorter-image" src={shaper} alt="shaper" />
+				{:else if trim == 'Raiser'}
+					<img class="general-sorter-image" src={raiser} alt="raiser" />
+				{:else if trim == 'Host'}
+					<img class="general-sorter-image" src={host} alt="host" />
+				{:else if trim == 'Flow'}
+					<img class="general-sorter-image" src={flow} alt="flow" />
+				{:else if trim == 'Bolt'}
+					<img class="general-sorter-image" src={bolt} alt="bolt" />
+				{:else if trim == 'Silence'}
+					<img class="general-sorter-image" src={silence} alt="silence" />
+				{/if}
+
+				{trim}
+			</Button>
+
+			{#if !current.isPremium && (trim === 'Host' || trim === 'Ward' || trim === 'Silence' || trim === 'Tide' || trim === 'Snout' || trim === 'Rib' || trim === 'Eye' || trim === 'Spire' || trim === 'Flow' || trim === 'Bolt')}
+				<img class="premium-badge" src={premium} alt="Premium" />
 			{/if}
-			{trim}</Button
-		>
+		</div>
 	{/each}
 </div>
 
@@ -152,4 +162,21 @@
 		<Bolt />
 	{/if}
 </div>
+
 <Footer />
+
+<style>
+	.tab-wrapper {
+		position: relative;
+	}
+
+	.premium-badge {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		width: 18px;
+		height: 18px;
+		z-index: 10;
+		pointer-events: none;
+	}
+</style>

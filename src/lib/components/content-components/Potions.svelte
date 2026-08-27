@@ -22,6 +22,7 @@
 	import Weaving from '$lib/components/content-components/potion-components/Weaving.svelte';
 	import Infested from '$lib/components/content-components/potion-components/Infested.svelte';
 	import WindCharged from '$lib/components/content-components/potion-components/WindCharged.svelte';
+
 	import fireres from '$lib/assets/potions/fireres.svg';
 	import harming from '$lib/assets/potions/harming.svg';
 	import healing from '$lib/assets/potions/healing.svg';
@@ -41,7 +42,12 @@
 	import weaving from '$lib/assets/potions/weaving.svg';
 	import windcharged from '$lib/assets/potions/windcharged.svg';
 	import turtlemaster from '$lib/assets/potions/turtlemaster.svg';
+
+	import { current } from '../../../shared.svelte';
+	import premium from '$lib/assets/general/premium.svg';
+
 	let selectedPotion = $state('Regeneration');
+
 	let sortablePotions = $state([
 		'Regeneration',
 		'Healing',
@@ -67,53 +73,60 @@
 
 <div class="general-sorter">
 	{#each sortablePotions as potion, i (i)}
-		<Button
-			class={selectedPotion === potion ? 'selected-button' : ''}
-			onclick={() => {
-				selectedPotion = potion;
-			}}
-		>
-			{#if potion == 'Regeneration'}
-				<img class="general-sorter-image" src={regeneration} alt="regeneration" />
-			{:else if potion == 'Healing'}
-				<img class="general-sorter-image" src={healing} alt="healing" />
-			{:else if potion == 'Swiftness'}
-				<img class="general-sorter-image" src={swiftness} alt="swiftness" />
-			{:else if potion == 'Fire Resistance'}
-				<img class="general-sorter-image" src={fireres} alt="fireres" />
-			{:else if potion == 'Night Vision'}
-				<img class="general-sorter-image" src={nightvis} alt="nightvis" />
-			{:else if potion == 'Weakness'}
-				<img class="general-sorter-image" src={weakness} alt="weakness" />
-			{:else if potion == 'Strength'}
-				<img class="general-sorter-image" src={strength} alt="strength" />
-			{:else if potion == 'Slowness'}
-				<img class="general-sorter-image" src={slowness} alt="slowness" />
-			{:else if potion == 'Leaping'}
-				<img class="general-sorter-image" src={leaping} alt="leaping" />
-			{:else if potion == 'Harming'}
-				<img class="general-sorter-image" src={harming} alt="harming" />
-			{:else if potion == 'Water Breathing'}
-				<img class="general-sorter-image" src={waterbreathing} alt="waterbreathing" />
-			{:else if potion == 'Invisibility'}
-				<img class="general-sorter-image" src={invisibility} alt="invisibility" />
-			{:else if potion == 'Poison'}
-				<img class="general-sorter-image" src={poison} alt="poison" />
-			{:else if potion == 'Slow Falling'}
-				<img class="general-sorter-image" src={slowfalling} alt="slowfalling" />
-			{:else if potion == 'Oozing'}
-				<img class="general-sorter-image" src={oozing} alt="oozing" />
-			{:else if potion == 'Weaving'}
-				<img class="general-sorter-image" src={weaving} alt="weaving" />
-			{:else if potion == 'Infested'}
-				<img class="general-sorter-image" src={infestation} alt="infestation" />
-			{:else if potion == 'Wind Charged'}
-				<img class="general-sorter-image" src={windcharged} alt="windcharged" />
-			{:else if potion == 'Turtle Master'}
-				<img class="general-sorter-image" src={turtlemaster} alt="turtlemaster" />
+		<div class="tab-wrapper">
+			<Button
+				class={selectedPotion === potion ? 'selected-button' : ''}
+				onclick={() => {
+					selectedPotion = potion;
+				}}
+			>
+				{#if potion == 'Regeneration'}
+					<img class="general-sorter-image" src={regeneration} alt="regeneration" />
+				{:else if potion == 'Healing'}
+					<img class="general-sorter-image" src={healing} alt="healing" />
+				{:else if potion == 'Swiftness'}
+					<img class="general-sorter-image" src={swiftness} alt="swiftness" />
+				{:else if potion == 'Fire Resistance'}
+					<img class="general-sorter-image" src={fireres} alt="fireres" />
+				{:else if potion == 'Night Vision'}
+					<img class="general-sorter-image" src={nightvis} alt="nightvis" />
+				{:else if potion == 'Weakness'}
+					<img class="general-sorter-image" src={weakness} alt="weakness" />
+				{:else if potion == 'Strength'}
+					<img class="general-sorter-image" src={strength} alt="strength" />
+				{:else if potion == 'Slowness'}
+					<img class="general-sorter-image" src={slowness} alt="slowness" />
+				{:else if potion == 'Leaping'}
+					<img class="general-sorter-image" src={leaping} alt="leaping" />
+				{:else if potion == 'Harming'}
+					<img class="general-sorter-image" src={harming} alt="harming" />
+				{:else if potion == 'Water Breathing'}
+					<img class="general-sorter-image" src={waterbreathing} alt="waterbreathing" />
+				{:else if potion == 'Invisibility'}
+					<img class="general-sorter-image" src={invisibility} alt="invisibility" />
+				{:else if potion == 'Poison'}
+					<img class="general-sorter-image" src={poison} alt="poison" />
+				{:else if potion == 'Slow Falling'}
+					<img class="general-sorter-image" src={slowfalling} alt="slowfalling" />
+				{:else if potion == 'Turtle Master'}
+					<img class="general-sorter-image" src={turtlemaster} alt="turtlemaster" />
+				{:else if potion == 'Oozing'}
+					<img class="general-sorter-image" src={oozing} alt="oozing" />
+				{:else if potion == 'Weaving'}
+					<img class="general-sorter-image" src={weaving} alt="weaving" />
+				{:else if potion == 'Infested'}
+					<img class="general-sorter-image" src={infestation} alt="infestation" />
+				{:else if potion == 'Wind Charged'}
+					<img class="general-sorter-image" src={windcharged} alt="windcharged" />
+				{/if}
+
+				{potion}
+			</Button>
+
+			{#if !current.isPremium && i >= 5}
+				<img class="premium-badge" src={premium} alt="Premium" />
 			{/if}
-			{potion}</Button
-		>
+		</div>
 	{/each}
 </div>
 
@@ -158,4 +171,21 @@
 		<WindCharged />
 	{/if}
 </div>
+
 <Footer />
+
+<style>
+	.tab-wrapper {
+		position: relative;
+	}
+
+	.premium-badge {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		width: 18px;
+		height: 18px;
+		z-index: 10;
+		pointer-events: none;
+	}
+</style>

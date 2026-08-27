@@ -6,6 +6,8 @@
 	import descriptions from '$lib/assets/general/descriptions.svg';
 	import bestenchants from '$lib/assets/general/bestenchants.svg';
 	import totaltable from '$lib/assets/general/totaltable.svg';
+	import { current } from '../../../shared.svelte';
+	import premium from '$lib/assets/general/premium.svg';
 	let selectedTab = $state('Descriptions');
 	let sortableTabs = $state(['Descriptions', 'Best Enchants', 'Total Table']);
 
@@ -154,21 +156,27 @@
 
 <div class="general-sorter">
 	{#each sortableTabs as tab, i (i)}
-		<Button
-			class={selectedTab === tab ? 'selected-button' : ''}
-			onclick={() => {
-				selectedTab = tab;
-			}}
-		>
-			{#if tab == 'Descriptions'}
-				<img class="general-sorter-image" src={descriptions} alt="descriptions" />
-			{:else if tab == 'Best Enchants'}
-				<img class="general-sorter-image" src={bestenchants} alt="bestenchants" />
-			{:else if tab == 'Total Table'}
-				<img class="general-sorter-image" src={totaltable} alt="totaltable" />
+		<div class="tab-wrapper">
+			<Button
+				class={selectedTab === tab ? 'selected-button' : ''}
+				onclick={() => {
+					selectedTab = tab;
+				}}
+			>
+				{#if tab == 'Descriptions'}
+					<img class="general-sorter-image" src={descriptions} alt="descriptions" />
+				{:else if tab == 'Best Enchants'}
+					<img class="general-sorter-image" src={bestenchants} alt="bescenchants" />
+				{:else if tab == 'Total Table'}
+					<img class="general-sorter-image" src={totaltable} alt="totaltable" />
+				{/if}
+				{tab}
+			</Button>
+
+			{#if !current.isPremium && (tab === 'Best Enchants' || tab === 'Total Table')}
+				<img class="premium-badge" src={premium} alt="Premium" />
 			{/if}
-			{tab}</Button
-		>
+		</div>
 	{/each}
 </div>
 
@@ -181,3 +189,19 @@
 		<TotalTable {sections} />
 	{/if}
 </div>
+
+<style>
+	.tab-wrapper {
+		position: relative;
+	}
+
+	.premium-badge {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		width: 18px;
+		height: 18px;
+		z-index: 10;
+		pointer-events: none;
+	}
+</style>

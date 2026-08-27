@@ -1,6 +1,9 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import { current } from '../../../shared.svelte';
+	import premium from '$lib/assets/general/premium.svg';
+
 	import coal from '$lib/assets/ores/coal.svg';
 	import copper from '$lib/assets/ores/copper.svg';
 	import diamond from '$lib/assets/ores/diamond.svg';
@@ -26,7 +29,9 @@
 	import NetherGold from './ores-components/NetherGold.svelte';
 	import Redstone from './ores-components/Redstone.svelte';
 	import Lapis from './ores-components/Lapis.svelte';
+
 	let selectedOre = $state('Coal');
+
 	let sortableOres = $state([
 		'Coal',
 		'Copper',
@@ -45,39 +50,46 @@
 
 <div class="general-sorter">
 	{#each sortableOres as ore, i (i)}
-		<Button
-			class={selectedOre === ore ? 'selected-button' : ''}
-			onclick={() => {
-				selectedOre = ore;
-			}}
-		>
-			{#if ore == 'Coal'}
-				<img class="general-sorter-image" src={coal} alt="coal" />
-			{:else if ore == 'Copper'}
-				<img class="general-sorter-image" src={copper} alt="copper" />
-			{:else if ore == 'Lapis'}
-				<img class="general-sorter-image" src={lapis} alt="lapis" />
-			{:else if ore == 'Diamond'}
-				<img class="general-sorter-image" src={diamond} alt="diamond" />
-			{:else if ore == 'Emerald'}
-				<img class="general-sorter-image" src={emerald} alt="emerald" />
-			{:else if ore == 'Quartz'}
-				<img class="general-sorter-image" src={quartz} alt="quartz" />
-			{:else if ore == 'Redstone'}
-				<img class="general-sorter-image" src={redstone} alt="redstone" />
-			{:else if ore == 'Nether Gold'}
-				<img class="general-sorter-image" src={nethergold} alt="nethergold" />
-			{:else if ore == 'Iron'}
-				<img class="general-sorter-image" src={iron} alt="iron" />
-			{:else if ore == 'Gold'}
-				<img class="general-sorter-image" src={gold} alt="gold" />
-			{:else if ore == 'Amethyst'}
-				<img class="general-sorter-image" src={amethyst} alt="amethyst" />
-			{:else if ore == 'Ancient Debris'}
-				<img class="general-sorter-image" src={ancientdebris} alt="ancientdebris" />
+		<div class="tab-wrapper">
+			<Button
+				class={selectedOre === ore ? 'selected-button' : ''}
+				onclick={() => {
+					selectedOre = ore;
+				}}
+			>
+				{#if ore == 'Coal'}
+					<img class="general-sorter-image" src={coal} alt="coal" />
+				{:else if ore == 'Copper'}
+					<img class="general-sorter-image" src={copper} alt="copper" />
+				{:else if ore == 'Lapis'}
+					<img class="general-sorter-image" src={lapis} alt="lapis" />
+				{:else if ore == 'Diamond'}
+					<img class="general-sorter-image" src={diamond} alt="diamond" />
+				{:else if ore == 'Emerald'}
+					<img class="general-sorter-image" src={emerald} alt="emerald" />
+				{:else if ore == 'Quartz'}
+					<img class="general-sorter-image" src={quartz} alt="quartz" />
+				{:else if ore == 'Redstone'}
+					<img class="general-sorter-image" src={redstone} alt="redstone" />
+				{:else if ore == 'Nether Gold'}
+					<img class="general-sorter-image" src={nethergold} alt="nethergold" />
+				{:else if ore == 'Iron'}
+					<img class="general-sorter-image" src={iron} alt="iron" />
+				{:else if ore == 'Gold'}
+					<img class="general-sorter-image" src={gold} alt="gold" />
+				{:else if ore == 'Amethyst'}
+					<img class="general-sorter-image" src={amethyst} alt="amethyst" />
+				{:else if ore == 'Ancient Debris'}
+					<img class="general-sorter-image" src={ancientdebris} alt="ancientdebris" />
+				{/if}
+
+				{ore}
+			</Button>
+
+			{#if !current.isPremium && (ore === 'Amethyst' || ore === 'Lapis' || ore === 'Redstone' || ore === 'Diamond' || ore === 'Emerald' || ore === 'Quartz' || ore === 'Nether Gold' || ore === 'Ancient Debris')}
+				<img class="premium-badge" src={premium} alt="Premium" />
 			{/if}
-			{ore}</Button
-		>
+		</div>
 	{/each}
 </div>
 
@@ -108,4 +120,21 @@
 		<AncientDebris />
 	{/if}
 </div>
+
 <Footer />
+
+<style>
+	.tab-wrapper {
+		position: relative;
+	}
+
+	.premium-badge {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		width: 18px;
+		height: 18px;
+		z-index: 10;
+		pointer-events: none;
+	}
+</style>

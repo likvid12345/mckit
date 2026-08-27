@@ -1,6 +1,8 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import { current } from '../../../shared.svelte';
+	import premium from '$lib/assets/general/premium.svg';
 
 	import String from './trades-components/String.svelte';
 	import Wheat from './trades-components/Wheat.svelte';
@@ -66,6 +68,7 @@
 	import compass from '$lib/assets/trades/compass.svg';
 
 	let selectedTrade = $state('Wheat');
+
 	let sortableTrades = $state([
 		'Wheat',
 		'Potato',
@@ -102,75 +105,82 @@
 
 <div class="general-sorter">
 	{#each sortableTrades as trade, i (i)}
-		<Button
-			class={selectedTrade === trade ? 'selected-button' : ''}
-			onclick={() => {
-				selectedTrade = trade;
-			}}
-		>
-			{#if trade == 'Wheat'}
-				<img class="general-sorter-image" src={wheat} alt="wheat" />
-			{:else if trade == 'Potato'}
-				<img class="general-sorter-image" src={potato} alt="potato" />
-			{:else if trade == 'Carrot'}
-				<img class="general-sorter-image" src={carrot} alt="carrot" />
-			{:else if trade == 'Coal'}
-				<img class="general-sorter-image" src={coal} alt="coal" />
-			{:else if trade == 'Paper'}
-				<img class="general-sorter-image" src={paper} alt="paper" />
-			{:else if trade == 'Stone'}
-				<img class="general-sorter-image" src={stone} alt="stone" />
-			{:else if trade == 'Clay Ball'}
-				<img class="general-sorter-image" src={clayball} alt="clayball" />
-			{:else if trade == 'Stick'}
-				<img class="general-sorter-image" src={stick} alt="stick" />
-			{:else if trade == 'String'}
-				<img class="general-sorter-image" src={string} alt="string" />
-			{:else if trade == 'Flint'}
-				<img class="general-sorter-image" src={flint} alt="flint" />
-			{:else if trade == 'Beetroot'}
-				<img class="general-sorter-image" src={beetroot} alt="beetroot" />
-			{:else if trade == 'Rotten Flesh'}
-				<img class="general-sorter-image" src={rottenflash} alt="rottenflesh" />
-			{:else if trade == 'Raw Porkchop'}
-				<img class="general-sorter-image" src={rawporkchop} alt="rawporkchop" />
-			{:else if trade == 'Raw Rabbit'}
-				<img class="general-sorter-image" src={rawrabbit} alt="rawrabbit" />
-			{:else if trade == 'Raw Chicken'}
-				<img class="general-sorter-image" src={rawchicken} alt="rawchicken" />
-			{:else if trade == 'Scute'}
-				<img class="general-sorter-image" src={scute} alt="scute" />
-			{:else if trade == 'Tripwire Hook'}
-				<img class="general-sorter-image" src={tripwirehook} alt="tripwirehook" />
-			{:else if trade == 'Nether Wart'}
-				<img class="general-sorter-image" src={netherwart} alt="netherwart" />
-			{:else if trade == 'Dye'}
-				<img class="general-sorter-image" src={dye} alt="dye" />
-			{:else if trade == 'Iron Ingot'}
-				<img class="general-sorter-image" src={ironingot} alt="ironingot" />
-			{:else if trade == 'Gold Ingot'}
-				<img class="general-sorter-image" src={goldingot} alt="goldingot" />
-			{:else if trade == 'Wool'}
-				<img class="general-sorter-image" src={wool} alt="wool" />
-			{:else if trade == 'Feather'}
-				<img class="general-sorter-image" src={feather} alt="feather" />
-			{:else if trade == 'Leather'}
-				<img class="general-sorter-image" src={leather} alt="leather" />
-			{:else if trade == 'Rabbit Hide'}
-				<img class="general-sorter-image" src={rabbithide} alt="rabbithide" />
-			{:else if trade == 'Ink Sac'}
-				<img class="general-sorter-image" src={inksac} alt="inksac" />
-			{:else if trade == 'Diamond'}
-				<img class="general-sorter-image" src={diamond} alt="diamond" />
-			{:else if trade == "Rabbit's Foot"}
-				<img class="general-sorter-image" src={rabbitsfoot} alt="rabbitsfoot" />
-			{:else if trade == 'Glass Pane'}
-				<img class="general-sorter-image" src={glasspane} alt="glasspane" />
-			{:else if trade == 'Compass'}
-				<img class="general-sorter-image" src={compass} alt="compass" />
+		<div class="tab-wrapper">
+			<Button
+				class={selectedTrade === trade ? 'selected-button' : ''}
+				onclick={() => {
+					selectedTrade = trade;
+				}}
+			>
+				{#if trade == 'Wheat'}
+					<img class="general-sorter-image" src={wheat} alt="wheat" />
+				{:else if trade == 'Potato'}
+					<img class="general-sorter-image" src={potato} alt="potato" />
+				{:else if trade == 'Carrot'}
+					<img class="general-sorter-image" src={carrot} alt="carrot" />
+				{:else if trade == 'Coal'}
+					<img class="general-sorter-image" src={coal} alt="coal" />
+				{:else if trade == 'Paper'}
+					<img class="general-sorter-image" src={paper} alt="paper" />
+				{:else if trade == 'Stone'}
+					<img class="general-sorter-image" src={stone} alt="stone" />
+				{:else if trade == 'Clay Ball'}
+					<img class="general-sorter-image" src={clayball} alt="clayball" />
+				{:else if trade == 'Stick'}
+					<img class="general-sorter-image" src={stick} alt="stick" />
+				{:else if trade == 'String'}
+					<img class="general-sorter-image" src={string} alt="string" />
+				{:else if trade == 'Flint'}
+					<img class="general-sorter-image" src={flint} alt="flint" />
+				{:else if trade == 'Beetroot'}
+					<img class="general-sorter-image" src={beetroot} alt="beetroot" />
+				{:else if trade == 'Rotten Flesh'}
+					<img class="general-sorter-image" src={rottenflash} alt="rottenflesh" />
+				{:else if trade == 'Raw Porkchop'}
+					<img class="general-sorter-image" src={rawporkchop} alt="rawporkchop" />
+				{:else if trade == 'Raw Rabbit'}
+					<img class="general-sorter-image" src={rawrabbit} alt="rawrabbit" />
+				{:else if trade == 'Raw Chicken'}
+					<img class="general-sorter-image" src={rawchicken} alt="rawchicken" />
+				{:else if trade == 'Scute'}
+					<img class="general-sorter-image" src={scute} alt="scute" />
+				{:else if trade == 'Tripwire Hook'}
+					<img class="general-sorter-image" src={tripwirehook} alt="tripwirehook" />
+				{:else if trade == 'Nether Wart'}
+					<img class="general-sorter-image" src={netherwart} alt="netherwart" />
+				{:else if trade == 'Dye'}
+					<img class="general-sorter-image" src={dye} alt="dye" />
+				{:else if trade == 'Iron Ingot'}
+					<img class="general-sorter-image" src={ironingot} alt="ironingot" />
+				{:else if trade == 'Gold Ingot'}
+					<img class="general-sorter-image" src={goldingot} alt="goldingot" />
+				{:else if trade == 'Wool'}
+					<img class="general-sorter-image" src={wool} alt="wool" />
+				{:else if trade == 'Feather'}
+					<img class="general-sorter-image" src={feather} alt="feather" />
+				{:else if trade == 'Leather'}
+					<img class="general-sorter-image" src={leather} alt="leather" />
+				{:else if trade == 'Rabbit Hide'}
+					<img class="general-sorter-image" src={rabbithide} alt="rabbithide" />
+				{:else if trade == 'Ink Sac'}
+					<img class="general-sorter-image" src={inksac} alt="inksac" />
+				{:else if trade == 'Diamond'}
+					<img class="general-sorter-image" src={diamond} alt="diamond" />
+				{:else if trade == "Rabbit's Foot"}
+					<img class="general-sorter-image" src={rabbitsfoot} alt="rabbitsfoot" />
+				{:else if trade == 'Glass Pane'}
+					<img class="general-sorter-image" src={glasspane} alt="glasspane" />
+				{:else if trade == 'Compass'}
+					<img class="general-sorter-image" src={compass} alt="compass" />
+				{/if}
+
+				{trade}
+			</Button>
+
+			{#if !current.isPremium && i > 7}
+				<img class="premium-badge" src={premium} alt="Premium" />
 			{/if}
-			{trade}</Button
-		>
+		</div>
 	{/each}
 </div>
 
@@ -237,4 +247,21 @@
 		<Stone />
 	{/if}
 </div>
+
 <Footer />
+
+<style>
+	.tab-wrapper {
+		position: relative;
+	}
+
+	.premium-badge {
+		position: absolute;
+		top: -6px;
+		right: -6px;
+		width: 18px;
+		height: 18px;
+		z-index: 10;
+		pointer-events: none;
+	}
+</style>
