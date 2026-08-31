@@ -1,8 +1,6 @@
 <script>
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import { initPurchases } from '$lib/purchases';
-	import { refreshPremiumStatus } from '$lib/premium';
 	import { hasCompletedOnboarding } from '$lib/onboarding';
 	import { current } from '../shared.svelte';
 	import Welcome from '$lib/components/page-components/Welcome.svelte';
@@ -13,8 +11,6 @@
 
 	let ready = $state(false);
 	onMount(async () => {
-		await initPurchases();
-		await refreshPremiumStatus();
 		const completed = await hasCompletedOnboarding();
 		current.page = completed ? 'main' : 'welcome';
 

@@ -1,1 +1,1 @@
-export const current = $state({ page: null, isPremium: false });
+export const current = $state({ page: null, isPremium: true });
