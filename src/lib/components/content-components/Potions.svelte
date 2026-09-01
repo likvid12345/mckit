@@ -43,9 +43,6 @@
 	import windcharged from '$lib/assets/potions/windcharged.svg';
 	import turtlemaster from '$lib/assets/potions/turtlemaster.svg';
 
-	import { current } from '../../../shared.svelte';
-	import premium from '$lib/assets/general/premium.svg';
-
 	let selectedPotion = $state('Regeneration');
 
 	let sortablePotions = $state([
@@ -122,10 +119,6 @@
 
 				{potion}
 			</Button>
-
-			{#if !current.isPremium && i >= 5}
-				<img class="premium-badge" src={premium} alt="Premium" />
-			{/if}
 		</div>
 	{/each}
 </div>
@@ -177,15 +170,5 @@
 <style>
 	.tab-wrapper {
 		position: relative;
-	}
-
-	.premium-badge {
-		position: absolute;
-		top: -6px;
-		right: -6px;
-		width: 18px;
-		height: 18px;
-		z-index: 10;
-		pointer-events: none;
 	}
 </style>

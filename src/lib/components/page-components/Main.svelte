@@ -7,11 +7,8 @@
 	import Beacon from '../content-components/Beacon.svelte';
 	import Enchants from '../content-components/Enchants.svelte';
 	import Potions from '../content-components/Potions.svelte';
-	import Discord from '../content-components/Discord.svelte';
-	import Achievements from '../content-components/Achievements.svelte';
 	import Hotkeys from '../content-components/Hotkeys.svelte';
 
-	import achievements from '$lib/assets/general/achievements.svg';
 	import hotkeys from '$lib/assets/general/hotkeys.svg';
 	import beacon from '$lib/assets/general/beacon.svg';
 	import enchants from '$lib/assets/general/enchants.svg';
@@ -27,9 +24,7 @@
 		'Ores',
 		'Trims',
 		'Emerald Trades',
-		'Hotkeys',
-		'Achievements',
-		'Discord'
+		'Hotkeys'
 	]);
 </script>
 
@@ -47,8 +42,6 @@
 		>
 			{#if contentTab == 'Discord'}
 				<span class="pulse-circle"></span>
-			{:else if contentTab == 'Achievements'}
-				<img class="general-sorter-image" src={achievements} alt="achievements" />
 			{:else if contentTab == 'Hotkeys'}
 				<img class="general-sorter-image" src={hotkeys} alt="hotkeys" />
 			{:else if contentTab == 'Beacon'}
@@ -83,9 +76,5 @@
 		<EmeraldTrades />
 	{:else if selectedContent == 'hotkeys'}
 		<Hotkeys />
-	{:else if selectedContent == 'achievements'}
-		<Achievements />
-	{:else if selectedContent == 'discord'}
-		<Discord />
 	{/if}
 </div>

@@ -1,8 +1,6 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
-	import { current } from '../../../shared.svelte';
-	import premium from '$lib/assets/general/premium.svg';
 
 	import coal from '$lib/assets/ores/coal.svg';
 	import copper from '$lib/assets/ores/copper.svg';
@@ -85,10 +83,6 @@
 
 				{ore}
 			</Button>
-
-			{#if !current.isPremium && (ore === 'Amethyst' || ore === 'Lapis' || ore === 'Redstone' || ore === 'Diamond' || ore === 'Emerald' || ore === 'Quartz' || ore === 'Nether Gold' || ore === 'Ancient Debris')}
-				<img class="premium-badge" src={premium} alt="Premium" />
-			{/if}
 		</div>
 	{/each}
 </div>
@@ -126,15 +120,5 @@
 <style>
 	.tab-wrapper {
 		position: relative;
-	}
-
-	.premium-badge {
-		position: absolute;
-		top: -6px;
-		right: -6px;
-		width: 18px;
-		height: 18px;
-		z-index: 10;
-		pointer-events: none;
 	}
 </style>

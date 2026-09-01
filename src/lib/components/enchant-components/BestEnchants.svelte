@@ -1,6 +1,5 @@
 <script>
 	import Footer from '$lib/components/element-components/Footer.svelte';
-	import { current } from '../../../shared.svelte';
 
 	const sections = $state([
 		{
@@ -171,62 +170,38 @@
 	<p class="intro">The strongest enchantment combo for every piece of gear you can enchant.</p>
 
 	{#each sections as section, s (s)}
-		{#if section.title === 'Weapons' || current.isPremium}
-			<div class="section-divider">
-				<span class="section-label">{section.title}</span>
-			</div>
+		<div class="section-divider">
+			<span class="section-label">{section.title}</span>
+		</div>
 
-			{#each section.items as cat, i (i)}
-				<h2 class="item-title">{cat.title}</h2>
+		{#each section.items as cat, i (i)}
+			<h2 class="item-title">{cat.title}</h2>
 
-				<div class="gray-container">
-					<div class="tag-row">
-						{#each cat.enchants as enchant, j (j)}
-							<span class="tag">{enchant}</span>
-						{/each}
-					</div>
-
-					{#if cat.note}
-						<p class="cat-note">{cat.note}</p>
-					{/if}
+			<div class="gray-container">
+				<div class="tag-row">
+					{#each cat.enchants as enchant, j (j)}
+						<span class="tag">{enchant}</span>
+					{/each}
 				</div>
-			{/each}
-		{/if}
+
+				{#if cat.note}
+					<p class="cat-note">{cat.note}</p>
+				{/if}
+			</div>
+		{/each}
 	{/each}
 
-	{#if !current.isPremium}
-		<div class="premium-wrapper">
-			<div class="premium-card">
-				<span class="eyebrow">PREMIUM</span>
+	<div class="divider"></div>
 
-				<h1>More enchantment guides are a premium feature</h1>
-
-				<p>
-					Unlock MCKit Premium to access the complete Best Enchants guide, including Tools, Armor,
-					and Utility.
-				</p>
-
-				<button onclick={() => (current.page = 'premium')}>
-					Unlock Premium
-					<span>→</span>
-				</button>
-			</div>
-		</div>
-	{/if}
-
-	{#if current.isPremium}
-		<div class="divider"></div>
-
-		<div class="info-note">
-			<p>
-				Mending and Unbreaking work together on almost every piece of gear. Unbreaking reduces
-				durability consumption, while Mending repairs the item using XP. Protection-type
-				enchantments are mutually exclusive, as are other specialized alternatives such as
-				Fortune/Silk Touch, Depth Strider/Frost Walker, Infinity/Mending, Multishot/Piercing, and
-				Density/Breach/Smite/Bane.
-			</p>
-		</div>
-	{/if}
+	<div class="info-note">
+		<p>
+			Mending and Unbreaking work together on almost every piece of gear. Unbreaking reduces
+			durability consumption, while Mending repairs the item using XP. Protection-type enchantments
+			are mutually exclusive, as are other specialized alternatives such as Fortune/Silk Touch,
+			Depth Strider/Frost Walker, Infinity/Mending, Multishot/Piercing, and
+			Density/Breach/Smite/Bane.
+		</p>
+	</div>
 </div>
 
 <Footer />
@@ -318,66 +293,6 @@
 			font-size: 0.82rem;
 			margin: 0;
 			line-height: 1.5;
-		}
-
-		.premium-wrapper {
-			margin-top: 1rem;
-		}
-
-		.premium-card {
-			padding: 1.5rem;
-			background: rgba(255, 255, 255, 0.025);
-		}
-
-		.eyebrow {
-			display: block;
-			margin-bottom: 0.4rem;
-			color: var(--secondary);
-			font-size: 0.7rem;
-			font-weight: 700;
-			letter-spacing: 0.12em;
-		}
-
-		.premium-card h1 {
-			margin: 0;
-			color: white;
-			font-size: 1.5rem;
-			line-height: 1.3;
-		}
-
-		.premium-card p {
-			max-width: 600px;
-			margin: 0.9rem 0 1.25rem;
-			color: rgba(255, 255, 255, 0.65);
-			font-size: 0.95rem;
-			line-height: 1.7;
-		}
-
-		button {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.6rem;
-			padding: 0.55rem 1rem;
-			border: 1px solid color-mix(in srgb, var(--secondary) 60%, transparent);
-			border-radius: 7px;
-			background: var(--secondary);
-			color: white;
-			font-size: 0.9rem;
-			font-weight: 700;
-			cursor: pointer;
-			transition:
-				transform 0.15s ease,
-				opacity 0.15s ease;
-		}
-
-		button span {
-			font-size: 1.1rem;
-			line-height: 1;
-		}
-
-		button:hover {
-			transform: translateY(-1px);
-			opacity: 0.9;
 		}
 
 		.info-note {

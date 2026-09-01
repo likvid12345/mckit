@@ -3,7 +3,6 @@
 	import { Preferences } from '@capacitor/preferences';
 
 	import Footer from '../element-components/Footer.svelte';
-	import { current } from '../../../shared.svelte';
 
 	let { sections = [] } = $props();
 
@@ -147,80 +146,60 @@
 		</div>
 	{/each}
 
-	{#if current.isPremium}
-		<div class="divider"></div>
+	<div class="divider"></div>
 
-		<div class="table-header-row">
-			<h2 class="section-title">Enchants needed</h2>
+	<div class="table-header-row">
+		<h2 class="section-title">Enchants needed</h2>
 
-			{#if selected.size > 0}
-				<button class="reset-button" onclick={resetAll}> Reset </button>
-			{/if}
-		</div>
-
-		{#if totals.length === 0}
-			<div class="gray-container">
-				<p class="empty-text">Select some gear above to see the total.</p>
-			</div>
-		{:else}
-			{#if pendingTotals.length > 0}
-				<div class="gray-container">
-					{#each pendingTotals as [enchant, remaining], i (i)}
-						{@const total = totals.find(([e]) => e === enchant)[1]}
-
-						<button class="total-row" onclick={() => markOneComplete(enchant, total)}>
-							<span class="total-checkbox"></span>
-
-							<p class="total-name">
-								{enchant}
-							</p>
-
-							<span class="total-count">
-								x{remaining}
-							</span>
-						</button>
-					{/each}
-				</div>
-			{/if}
-
-			{#if completedTotals.length > 0}
-				<p class="container-sub">Completed</p>
-
-				<div class="gray-container completed-container">
-					{#each completedTotals as [enchant, done], i (i)}
-						<button class="total-row completed-row" onclick={() => unmarkOneComplete(enchant)}>
-							<span class="total-checkbox checked"> ✓ </span>
-
-							<p class="total-name completed-name">
-								{enchant}
-							</p>
-
-							<span class="total-count completed-count">
-								x{done}
-							</span>
-						</button>
-					{/each}
-				</div>
-			{/if}
+		{#if selected.size > 0}
+			<button class="reset-button" onclick={resetAll}> Reset </button>
 		{/if}
-	{:else}
-		<div class="premium-wrapper">
-			<div class="premium-card">
-				<span class="eyebrow">PREMIUM</span>
+	</div>
 
-				<h1>Total Enchant Table is a premium feature</h1>
-
-				<p>
-					Select your gear above for free, then unlock MCKit Premium to see exactly which enchanted
-					books you need.
-				</p>
-
-				<button class="premium-button" onclick={() => (current.page = 'premium')}>
-					Unlock Premium
-					<span>→</span>
-				</button>
-			</div>
+	{#if totals.length === 0}
+		<div class="gray-container">
+			<p class="empty-text">Select some gear above to see the total.</p>
 		</div>
+	{:else}
+		{#if pendingTotals.length > 0}
+			<div class="gray-container">
+				{#each pendingTotals as [enchant, remaining], i (i)}
+					{@const total = totals.find(([e]) => e === enchant)[1]}
+
+					<button class="total-row" onclick={() => markOneComplete(enchant, total)}>
+						<span class="total-checkbox"></span>
+
+						<p class="total-name">
+							{enchant}
+						</p>
+
+						<span class="total-count">
+							x{remaining}
+						</span>
+					</button>
+				{/each}
+			</div>
+		{/if}
+
+		{#if completedTotals.length > 0}
+			<p class="container-sub">Completed</p>
+
+			<div class="gray-container completed-container">
+				{#each completedTotals as [enchant, done], i (i)}
+					<button class="total-row completed-row" onclick={() => unmarkOneComplete(enchant)}>
+						<span class="total-checkbox checked"> ✓ </span>
+
+						<p class="total-name completed-name">
+							{enchant}
+						</p>
+
+						<span class="total-count completed-count">
+							x{done}
+						</span>
+					</button>
+				{/each}
+			</div>
+		{/if}
 	{/if}
 </div>
 
@@ -412,67 +391,6 @@
 
 		.completed-count {
 			color: #8a8a8d;
-		}
-
-		.premium-wrapper {
-			margin-top: 0.5rem;
-		}
-
-		.premium-card {
-			padding: 1.5rem;
-			background: rgba(255, 255, 255, 0.025);
-			border-radius: 0.75rem;
-		}
-
-		.eyebrow {
-			display: block;
-			margin-bottom: 0.4rem;
-			color: var(--secondary);
-			font-size: 0.7rem;
-			font-weight: 700;
-			letter-spacing: 0.12em;
-		}
-
-		.premium-card h1 {
-			margin: 0;
-			color: white;
-			font-size: 1.5rem;
-			line-height: 1.3;
-		}
-
-		.premium-card p {
-			max-width: 600px;
-			margin: 0.9rem 0 1.25rem;
-			color: rgba(255, 255, 255, 0.65);
-			font-size: 0.95rem;
-			line-height: 1.7;
-		}
-
-		.premium-button {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.6rem;
-			padding: 0.55rem 1rem;
-			border: 1px solid color-mix(in srgb, var(--secondary) 60%, transparent);
-			border-radius: 7px;
-			background: var(--secondary);
-			color: white;
-			font-size: 0.9rem;
-			font-weight: 700;
-			cursor: pointer;
-			transition:
-				transform 0.15s ease,
-				opacity 0.15s ease;
-		}
-
-		.premium-button span {
-			font-size: 1.1rem;
-			line-height: 1;
-		}
-
-		.premium-button:hover {
-			transform: translateY(-1px);
-			opacity: 0.9;
 		}
 	}
 </style>

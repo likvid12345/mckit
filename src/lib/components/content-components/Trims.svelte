@@ -1,8 +1,6 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
-	import { current } from '../../../shared.svelte';
-	import premium from '$lib/assets/general/premium.svg';
 
 	import Sentry from '$lib/components/content-components/trims-components/Sentry.svelte';
 	import Vex from '$lib/components/content-components/trims-components/Vex.svelte';
@@ -115,10 +113,6 @@
 
 				{trim}
 			</Button>
-
-			{#if !current.isPremium && (trim === 'Host' || trim === 'Ward' || trim === 'Silence' || trim === 'Tide' || trim === 'Snout' || trim === 'Rib' || trim === 'Eye' || trim === 'Spire' || trim === 'Flow' || trim === 'Bolt')}
-				<img class="premium-badge" src={premium} alt="Premium" />
-			{/if}
 		</div>
 	{/each}
 </div>
@@ -168,15 +162,5 @@
 <style>
 	.tab-wrapper {
 		position: relative;
-	}
-
-	.premium-badge {
-		position: absolute;
-		top: -6px;
-		right: -6px;
-		width: 18px;
-		height: 18px;
-		z-index: 10;
-		pointer-events: none;
 	}
 </style>

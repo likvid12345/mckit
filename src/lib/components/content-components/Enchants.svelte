@@ -6,8 +6,7 @@
 	import descriptions from '$lib/assets/general/descriptions.svg';
 	import bestenchants from '$lib/assets/general/bestenchants.svg';
 	import totaltable from '$lib/assets/general/totaltable.svg';
-	import { current } from '../../../shared.svelte';
-	import premium from '$lib/assets/general/premium.svg';
+
 	let selectedTab = $state('Descriptions');
 	let sortableTabs = $state(['Descriptions', 'Best Enchants', 'Total Table']);
 
@@ -172,10 +171,6 @@
 				{/if}
 				{tab}
 			</Button>
-
-			{#if !current.isPremium && (tab === 'Best Enchants' || tab === 'Total Table')}
-				<img class="premium-badge" src={premium} alt="Premium" />
-			{/if}
 		</div>
 	{/each}
 </div>
@@ -193,15 +188,5 @@
 <style>
 	.tab-wrapper {
 		position: relative;
-	}
-
-	.premium-badge {
-		position: absolute;
-		top: -6px;
-		right: -6px;
-		width: 18px;
-		height: 18px;
-		z-index: 10;
-		pointer-events: none;
 	}
 </style>

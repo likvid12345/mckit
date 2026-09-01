@@ -57,10 +57,10 @@
 	<CraftingTable
 		items={[
 			{ label: 'Diamond' },
-			{ label: duplicateMaterial },
-			{ label: 'Diamond' },
-			{ label: 'Diamond' },
 			{ label: name + ' Template' },
+			{ label: 'Diamond' },
+			{ label: 'Diamond' },
+			{ label: duplicateMaterial },
 			{ label: 'Diamond' },
 			{ label: 'Diamond' },
 			{ label: 'Diamond' },
