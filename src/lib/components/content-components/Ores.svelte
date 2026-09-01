@@ -1,6 +1,7 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import Support from '$lib/components/element-components/Support.svelte';
 
 	import coal from '$lib/assets/ores/coal.svg';
 	import copper from '$lib/assets/ores/copper.svg';
@@ -114,7 +115,7 @@
 		<AncientDebris />
 	{/if}
 </div>
-
+<Support />
 <Footer />
 
 <style>

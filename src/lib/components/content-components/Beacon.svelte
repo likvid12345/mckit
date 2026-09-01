@@ -1,6 +1,7 @@
 <script>
 	import CraftingTable from '$lib/components/element-components/CraftingTable.svelte';
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import Support from '$lib/components/element-components/Support.svelte';
 	const gridCells = Array.from({ length: 81 }, (_, i) => {
 		const x = i % 9;
 		const y = Math.floor(i / 9);
@@ -246,6 +247,7 @@
 		</p>
 	</div>
 </div>
+<Support />
 <Footer />
 
 <style>

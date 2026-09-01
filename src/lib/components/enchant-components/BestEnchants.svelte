@@ -1,6 +1,4 @@
 <script>
-	import Footer from '$lib/components/element-components/Footer.svelte';
-
 	const sections = $state([
 		{
 			title: 'Weapons',
@@ -163,13 +161,29 @@
 			]
 		}
 	]);
+
+	let search = $state('');
+
+	let filteredSections = $derived(
+		sections
+			.map((section) => ({
+				...section,
+				items: section.items.filter((item) =>
+					item.title.toLowerCase().includes(search.toLowerCase())
+				)
+			}))
+			.filter((section) => section.items.length > 0)
+	);
 </script>
 
 <div class="best-wrapper">
 	<h1 class="page-title">Best Enchants</h1>
+
 	<p class="intro">The strongest enchantment combo for every piece of gear you can enchant.</p>
 
-	{#each sections as section, s (s)}
+	<input class="search-input" type="search" placeholder="Search..." bind:value={search} />
+
+	{#each filteredSections as section, s (s)}
 		<div class="section-divider">
 			<span class="section-label">{section.title}</span>
 		</div>
@@ -191,6 +205,12 @@
 		{/each}
 	{/each}
 
+	{#if filteredSections.length === 0}
+		<div class="no-results">
+			<p>No gear found.</p>
+		</div>
+	{/if}
+
 	<div class="divider"></div>
 
 	<div class="info-note">
@@ -203,8 +223,6 @@
 		</p>
 	</div>
 </div>
-
-<Footer />
 
 <style>
 	.best-wrapper {
@@ -224,6 +242,28 @@
 			color: lightgray;
 			font-weight: bold;
 			margin: 0 0 0.25rem;
+		}
+
+		.search-input {
+			width: 100%;
+			box-sizing: border-box;
+			padding: 0.7rem 0.85rem;
+			background-color: #242427;
+			border: 1px solid #3a3a3d;
+			border-radius: 0.6rem;
+			color: white;
+			font-size: 0.9rem;
+			font-weight: 600;
+			outline: none;
+			margin-bottom: 0.25rem;
+		}
+
+		.search-input::placeholder {
+			color: #77777b;
+		}
+
+		.search-input:focus {
+			border-color: var(--secondary);
 		}
 
 		.section-divider {
@@ -293,6 +333,21 @@
 			font-size: 0.82rem;
 			margin: 0;
 			line-height: 1.5;
+		}
+
+		.no-results {
+			background-color: #242427;
+			border-radius: 0.75rem;
+			padding: 1rem;
+			margin-top: 0.25rem;
+		}
+
+		.no-results p {
+			color: #8a8a8d;
+			font-weight: bold;
+			font-size: 0.85rem;
+			text-align: center;
+			margin: 0;
 		}
 
 		.info-note {

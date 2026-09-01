@@ -1,6 +1,9 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
 	import Descriptions from '$lib/components/enchant-components/Descriptions.svelte';
+	import Support from '$lib/components/element-components/Support.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+
 	import BestEnchants from '$lib/components/enchant-components/BestEnchants.svelte';
 	import TotalTable from '$lib/components/enchant-components/TotalTable.svelte';
 	import descriptions from '$lib/assets/general/descriptions.svg';
@@ -184,6 +187,8 @@
 		<TotalTable {sections} />
 	{/if}
 </div>
+<Support />
+<Footer />
 
 <style>
 	.tab-wrapper {

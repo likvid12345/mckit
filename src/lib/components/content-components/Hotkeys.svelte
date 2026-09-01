@@ -1,5 +1,7 @@
 <script>
 	import Footer from '$lib/components/element-components/Footer.svelte';
+	import Support from '$lib/components/element-components/Support.svelte';
+
 	const groups = $state([
 		{
 			title: 'Movement',
@@ -107,6 +109,7 @@
 		</p>
 	</div>
 </div>
+<Support />
 <Footer />
 
 <style>

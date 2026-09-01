@@ -1,6 +1,7 @@
 <script>
 	import EnchantCard from '$lib/components/element-components/EnchantCard.svelte';
-	import Footer from '$lib/components/element-components/Footer.svelte';
+
+	let search = $state('');
 
 	let enchants = $state([
 		{
@@ -179,23 +180,32 @@
 			description: 'Destroys the item when you die, instead of dropping it.'
 		}
 	]);
+
+	let filteredEnchants = $derived(
+		enchants.filter((enchant) => enchant.name.toLowerCase().includes(search.toLowerCase()))
+	);
 </script>
 
 <div class="enchants-wrapper">
 	<h1 class="page-title">Descriptions</h1>
 	<p class="intro">A simple breakdown of what each enchantment does.</p>
 
+	<input class="search-input" type="text" placeholder="Search..." bind:value={search} />
+
 	<div class="divider"></div>
 
-	{#each enchants as enchant, i (i)}
+	{#each filteredEnchants as enchant, i (i)}
 		<EnchantCard
 			name={enchant.name}
 			maxLevel={enchant.maxLevel}
 			description={enchant.description}
 		/>
 	{/each}
+
+	{#if filteredEnchants.length === 0}
+		<p class="no-results">No enchantments found.</p>
+	{/if}
 </div>
-<Footer />
 
 <style>
 	.enchants-wrapper {
@@ -218,9 +228,37 @@
 		margin: 0 0 0.25rem;
 	}
 
+	.search-input {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 0.7rem 0.9rem;
+		border: 1px solid #3a3a3d;
+		border-radius: 0.6rem;
+		background-color: #242427;
+		color: white;
+		font-size: 0.9rem;
+		font-weight: 600;
+		outline: none;
+	}
+
+	.search-input::placeholder {
+		color: #8a8a8d;
+	}
+
+	.search-input:focus {
+		border-color: var(--secondary);
+	}
+
 	.divider {
 		height: 1px;
 		background-color: #333336;
 		margin: 0.5rem 0;
+	}
+
+	.no-results {
+		color: #8a8a8d;
+		font-weight: bold;
+		text-align: center;
+		margin: 1rem 0;
 	}
 </style>

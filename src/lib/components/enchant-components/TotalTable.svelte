@@ -2,8 +2,6 @@
 	import { onMount } from 'svelte';
 	import { Preferences } from '@capacitor/preferences';
 
-	import Footer from '../element-components/Footer.svelte';
-
 	let { sections = [] } = $props();
 
 	const SELECTED_KEY = 'total_table_selected';
@@ -202,8 +200,6 @@
 		{/if}
 	{/if}
 </div>
-
-<Footer />
 
 <style>
 	.total-wrapper {
