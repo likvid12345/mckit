@@ -8,7 +8,8 @@
 	import Enchants from '../content-components/Enchants.svelte';
 	import Potions from '../content-components/Potions.svelte';
 	import Hotkeys from '../content-components/Hotkeys.svelte';
-
+	import Coordinates from '../content-components/Coordinates.svelte';
+	import VillagerCuring from '../content-components/VillagerCuring.svelte';
 	import hotkeys from '$lib/assets/general/hotkeys.svg';
 	import beacon from '$lib/assets/general/beacon.svg';
 	import enchants from '$lib/assets/general/enchants.svg';
@@ -16,14 +17,18 @@
 	import ores from '$lib/assets/general/ore.svg';
 	import trim from '$lib/assets/general/trim.svg';
 	import emeraldtrade from '$lib/assets/general/emeraldtrade.svg';
+	import coordinates from '$lib/assets/general/coordinates.svg';
+	import goldenapple from '$lib/assets/general/goldenapple.svg';
 	let selectedContent = $state('beacon');
 	let sortableContent = $state([
 		'Beacon',
-		'Enchants',
-		'Potions',
 		'Ores',
+		'Potions',
+		'Enchants',
 		'Trims',
 		'Emerald Trades',
+		'VillagerCuring',
+		'Coordinates',
 		'Hotkeys'
 	]);
 </script>
@@ -56,6 +61,10 @@
 				<img class="general-sorter-image" src={trim} alt="trim" />
 			{:else if contentTab == 'Emerald Trades'}
 				<img class="general-sorter-image" src={emeraldtrade} alt="emeraldtrade" />
+			{:else if contentTab == 'Coordinates'}
+				<img class="general-sorter-image" src={coordinates} alt="coords" />
+			{:else if contentTab == 'VillagerCuring'}
+				<img class="general-sorter-image" src={goldenapple} alt="gepl" />
 			{/if}
 			{contentTab}</Button
 		>
@@ -64,16 +73,20 @@
 <div class="content-wrapper">
 	{#if selectedContent == 'beacon'}
 		<Beacon />
-	{:else if selectedContent == 'enchants'}
-		<Enchants />
-	{:else if selectedContent == 'potions'}
-		<Potions />
 	{:else if selectedContent == 'ores'}
 		<Ores />
+	{:else if selectedContent == 'potions'}
+		<Potions />
+	{:else if selectedContent == 'enchants'}
+		<Enchants />
 	{:else if selectedContent == 'trims'}
 		<Trims />
 	{:else if selectedContent == 'emeraldtrades'}
 		<EmeraldTrades />
+	{:else if selectedContent == 'villagercuring'}
+		<VillagerCuring />
+	{:else if selectedContent == 'coordinates'}
+		<Coordinates />
 	{:else if selectedContent == 'hotkeys'}
 		<Hotkeys />
 	{/if}
