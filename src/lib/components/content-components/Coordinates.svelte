@@ -71,9 +71,9 @@
 	<h2 class="section-title">Add a location</h2>
 	<div class="gray-container">
 		<div class="xyz-row">
-			<input class="xyz-input" type="number" placeholder="X" bind:value={xInput} />
-			<input class="xyz-input" type="number" placeholder="Y" bind:value={yInput} />
-			<input class="xyz-input" type="number" placeholder="Z" bind:value={zInput} />
+			<input class="xyz-input" type="text" placeholder="X" bind:value={xInput} />
+			<input class="xyz-input" type="text" placeholder="Y" bind:value={yInput} />
+			<input class="xyz-input" type="text" placeholder="Z" bind:value={zInput} />
 		</div>
 		<input
 			class="title-input"
