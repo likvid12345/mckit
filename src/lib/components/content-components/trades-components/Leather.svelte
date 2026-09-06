@@ -1,6 +1,8 @@
 <script>
 	import leather from '$lib/assets/trades/leather.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade has a 2/3 chance to appear at Novice level in Java Edition, and always appears in Bedrock Edition."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

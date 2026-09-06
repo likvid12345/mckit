@@ -1,6 +1,8 @@
 <script>
 	import ironingot from '$lib/assets/trades/ironingot.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="Armorer (Blast Furnace) and Weaponsmith (Grindstone) offer the exact same rate — 4 iron for 1 emerald — so use whichever job site block you already have set up."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

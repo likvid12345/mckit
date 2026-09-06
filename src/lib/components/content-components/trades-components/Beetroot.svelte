@@ -1,6 +1,8 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
 	import beetroot from '$lib/assets/trades/beetroot.svg';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="Trades run out after a limited number of uses. Let the villager sleep in a nearby bed overnight, or wait for the restock timer, to refresh their trades."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

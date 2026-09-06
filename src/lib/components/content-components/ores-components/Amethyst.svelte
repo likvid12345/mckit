@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -34,3 +36,12 @@
 	]}
 	note="Only fully grown clusters drop shards — small, medium, and large buds drop nothing. Never mine the budding amethyst block itself; it's what keeps growing new clusters over time."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

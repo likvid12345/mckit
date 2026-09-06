@@ -1,6 +1,8 @@
 <script>
 	import diamond from '$lib/assets/trades/diamond.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks at Journeyman level. Since diamonds are far more valuable than emeralds, this trade is rarely worth it — it's here mostly for completeness."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

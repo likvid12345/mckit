@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -37,3 +39,12 @@
 	]}
 	note="Redstone ore glows and drops sparkling particles when stepped on or hit — useful for spotting it in the dark from a distance."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

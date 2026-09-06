@@ -1,4 +1,7 @@
 <script>
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
+
 	import EnchantCard from '$lib/components/element-components/EnchantCard.svelte';
 
 	let search = $state('');
@@ -207,7 +210,14 @@
 	{/if}
 </div>
 
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
 <style>
+	.separator {
+		height: 100px;
+	}
 	.enchants-wrapper {
 		display: flex;
 		flex-direction: column;

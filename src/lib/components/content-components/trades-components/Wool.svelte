@@ -1,6 +1,8 @@
 <script>
 	import wool from '$lib/assets/trades/wool.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade is guaranteed at Novice level, though the color offered is random — white, gray, brown, or black."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

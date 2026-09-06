@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -34,3 +36,12 @@
 	]}
 	note="Lapis Lazuli Block (9 lapis) is a handy way to store large amounts compactly — and since Fortune II/III can average more than 9 per block, a single ore vein can sometimes out-produce a full lapis block."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

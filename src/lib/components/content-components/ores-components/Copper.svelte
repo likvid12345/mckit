@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -36,3 +38,12 @@
 	]}
 	note="Copper ore requires at least a Stone Pickaxe — mining it with a Wooden Pickaxe destroys the block and gives you nothing."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

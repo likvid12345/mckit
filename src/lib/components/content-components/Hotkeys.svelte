@@ -1,6 +1,6 @@
 <script>
 	import Footer from '$lib/components/element-components/Footer.svelte';
-	import Support from '$lib/components/element-components/Support.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 
 	const groups = $state([
 		{
@@ -109,10 +109,14 @@
 		</p>
 	</div>
 </div>
-<Support />
+<AdSlot />
 <Footer />
+<div class="separator"></div>
 
 <style>
+	.separator {
+		height: 100px;
+	}
 	.hotkeys-wrapper {
 		display: flex;
 		flex-direction: column;

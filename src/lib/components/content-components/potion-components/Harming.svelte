@@ -1,5 +1,7 @@
 <script>
 	import PotionGuide from '$lib/components/element-components/PotionGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <PotionGuide
@@ -83,3 +85,12 @@
 		}
 	]}
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

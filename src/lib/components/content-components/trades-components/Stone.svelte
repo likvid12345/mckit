@@ -1,6 +1,8 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
 	import stone from '$lib/assets/trades/stone.svg';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade is guaranteed at Novice level. Smelt spare cobblestone in a furnace to turn it into stone — an easy way to keep this trade stocked."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

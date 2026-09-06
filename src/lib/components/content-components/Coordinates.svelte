@@ -1,6 +1,7 @@
 <script>
-	import Support from '../element-components/Support.svelte';
 	import Footer from '../element-components/Footer.svelte';
+	import AdSlot from '../element-components/AdSlot.svelte';
+
 	import { onMount } from 'svelte';
 	import { Preferences } from '@capacitor/preferences';
 
@@ -132,10 +133,14 @@
 		</div>
 	{/if}
 </div>
-<Support />
+<AdSlot />
 <Footer />
+<div class="separator"></div>
 
 <style>
+	.separator {
+		height: 100px;
+	}
 	.coords-wrapper {
 		display: flex;
 		flex-direction: column;

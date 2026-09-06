@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -35,3 +37,12 @@
 	]}
 	note="Y=15 is one of the best levels for Ancient Debris mining. Beds and TNT can clear huge amounts of netherrack quickly, while Ancient Debris survives the explosions — making it easy to collect afterward."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

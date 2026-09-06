@@ -1,6 +1,8 @@
 <script>
 	import compass from '$lib/assets/trades/compass.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only unlocks at Journeyman level. Since a compass costs 4 Iron Ingots + 1 Redstone Dust to craft, it's not actually a cheap trade despite the 1:1 ratio."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

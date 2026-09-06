@@ -1,6 +1,6 @@
 <script>
-	import Support from '../element-components/Support.svelte';
 	import Footer from '../element-components/Footer.svelte';
+	import AdSlot from '../element-components/AdSlot.svelte';
 
 	import BrewingStand from '$lib/components/element-components/BrewingStand.svelte';
 	import CraftingTable from '$lib/components/element-components/CraftingTable.svelte';
@@ -148,10 +148,14 @@
 		</p>
 	</div>
 </div>
-<Support />
+<AdSlot />
 <Footer />
+<div class="separator"></div>
 
 <style>
+	.separator {
+		height: 100px;
+	}
 	.curing-wrapper {
 		display: flex;
 		flex-direction: column;

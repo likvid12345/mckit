@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -35,3 +37,12 @@
 	]}
 	note="Mining Nether Gold Ore normally angers nearby Piglins, even if you're wearing gold armor. Mine carefully, block yourself in when necessary, or use Silk Touch if you want to avoid the immediate nugget drops."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

@@ -1,6 +1,8 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
 	import flint from '$lib/assets/trades/flint.svg';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This rate unlocks at Apprentice level. Weaponsmiths and Toolsmiths also buy flint, but at worse rates — 24 to 30 flint for 1 emerald depending on their level."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

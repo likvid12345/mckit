@@ -1,6 +1,8 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
 	import rottenflash from '$lib/assets/trades/rottenflesh.svg';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1, icon: rottenflash }}
 	note="This trade is guaranteed at Novice level — every Cleric offers it. Great way to turn zombie or gold farm byproducts into steady emerald income."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

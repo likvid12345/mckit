@@ -1,6 +1,8 @@
 <script>
 	import Trade from '$lib/components/element-components/Trade.svelte';
 	import paper from '$lib/assets/trades/paper.svg';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="Curing a zombified Librarian can push this rate down significantly — some players report it dropping close to 18 paper per emerald."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

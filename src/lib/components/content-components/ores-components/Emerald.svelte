@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -34,3 +36,12 @@
 	]}
 	note="Emerald ore only generates in Mountain-family biomes. For actually building up a large emerald supply, villager trading is usually much faster than mining — especially once you have renewable crops, farms, or a good trading hall."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

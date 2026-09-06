@@ -1,5 +1,7 @@
 <script>
 	import TrimGuide from '$lib/components/element-components/TrimGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <TrimGuide
@@ -15,3 +17,12 @@
 	applyText="Take the template, an armor piece, and any trim material (like Iron Ingot or Copper Ingot) to a Smithing Table. The template and material are consumed, and the trim appears on the armor permanently — trims are purely cosmetic and never affect stats."
 	colorNote="Rib is intentionally darker than other trims. Netherite and Diamond give it an iconic blue-on-black skeletal look, Iron and Quartz create a bone-white contrast, and Redstone adds a striking 'bleeding rib' effect."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

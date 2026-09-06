@@ -1,6 +1,8 @@
 <script>
 	import rabbitsfoot from '$lib/assets/trades/rabbitsfoot.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade unlocks at Journeyman level. Rabbits only have a 10% chance to drop their foot, so this isn't a fast farm — but the 2:1 rate makes it worthwhile when you have extras."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

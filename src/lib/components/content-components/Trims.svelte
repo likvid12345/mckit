@@ -1,7 +1,5 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
-	import Footer from '$lib/components/element-components/Footer.svelte';
-	import Support from '$lib/components/element-components/Support.svelte';
 
 	import Sentry from '$lib/components/content-components/trims-components/Sentry.svelte';
 	import Vex from '$lib/components/content-components/trims-components/Vex.svelte';
@@ -22,6 +20,8 @@
 	import Flow from '$lib/components/content-components/trims-components/Flow.svelte';
 	import Bolt from '$lib/components/content-components/trims-components/Bolt.svelte';
 
+	import TrimTracker from './trims-components/TrimTracker.svelte';
+
 	import sentry from '$lib/assets/trims/sentry.svg';
 	import dune from '$lib/assets/trims/dune.svg';
 	import coast from '$lib/assets/trims/coast.svg';
@@ -40,10 +40,11 @@
 	import host from '$lib/assets/trims/host.svg';
 	import flow from '$lib/assets/trims/flow.svg';
 	import bolt from '$lib/assets/trims/bolt.svg';
-
+	import trimtracker from '$lib/assets/trims/trimtracker.svg';
 	let selectedTrim = $state('Sentry');
 
 	let sortableTrims = $state([
+		'Trim Tracker',
 		'Sentry',
 		'Vex',
 		'Wild',
@@ -67,6 +68,10 @@
 
 <div class="general-sorter">
 	{#each sortableTrims as trim, i (i)}
+		{#if trim === 'Sentry'}
+			<div class="tab-divider"></div>
+		{/if}
+
 		<div class="tab-wrapper">
 			<Button
 				class={selectedTrim === trim ? 'selected-button' : ''}
@@ -76,6 +81,8 @@
 			>
 				{#if trim == 'Sentry'}
 					<img class="general-sorter-image" src={sentry} alt="sentry" />
+				{:else if trim == 'Trim Tracker'}
+					<img class="general-sorter-image" src={trimtracker} alt="trimtracker" />
 				{:else if trim == 'Dune'}
 					<img class="general-sorter-image" src={dune} alt="dune" />
 				{:else if trim == 'Coast'}
@@ -123,6 +130,8 @@
 		<Sentry />
 	{:else if selectedTrim == 'Vex'}
 		<Vex />
+	{:else if selectedTrim == 'Trim Tracker'}
+		<TrimTracker />
 	{:else if selectedTrim == 'Wild'}
 		<Wild />
 	{:else if selectedTrim == 'Coast'}
@@ -157,10 +166,15 @@
 		<Bolt />
 	{/if}
 </div>
-<Support />
-<Footer />
 
 <style>
+	.tab-divider {
+		width: 2px;
+		height: 32px;
+		background-color: #3a3a3d;
+		margin: 2px 0.25rem;
+		flex-shrink: 0;
+	}
 	.tab-wrapper {
 		position: relative;
 	}

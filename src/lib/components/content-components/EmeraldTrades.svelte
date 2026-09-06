@@ -1,7 +1,5 @@
 <script>
 	import Button from '$lib/components/element-components/Button.svelte';
-	import Footer from '$lib/components/element-components/Footer.svelte';
-	import Support from '$lib/components/element-components/Support.svelte';
 	import String from './trades-components/String.svelte';
 	import Wheat from './trades-components/Wheat.svelte';
 	import Potato from './trades-components/Potato.svelte';
@@ -241,8 +239,6 @@
 		<Stone />
 	{/if}
 </div>
-<Support />
-<Footer />
 
 <style>
 	.tab-wrapper {

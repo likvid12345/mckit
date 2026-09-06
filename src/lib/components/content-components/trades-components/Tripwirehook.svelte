@@ -1,6 +1,8 @@
 <script>
 	import tripwirehook from '$lib/assets/trades/tripwirehook.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade only appears at Master level — the very last tier. You'll need to level the Fletcher up through Stick, Flint, String, and Feather trades first."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

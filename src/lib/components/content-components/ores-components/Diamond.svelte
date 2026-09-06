@@ -1,5 +1,7 @@
 <script>
 	import OreGuide from '$lib/components/element-components/OreGuide.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <OreGuide
@@ -35,3 +37,12 @@
 	]}
 	note="Watch out for lava at this depth. Mine at Y=-53 or -54 instead of Y=-59 if lava keeps ruining your runs — you'll find slightly fewer diamonds, but far less risk."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

@@ -1,6 +1,8 @@
 <script>
 	import dye from '$lib/assets/trades/dye.svg';
 	import Trade from '$lib/components/element-components/Trade.svelte';
+	import Footer from '$lib/components/element-components/Footer.svelte';
+	import AdSlot from '$lib/components/element-components/AdSlot.svelte';
 </script>
 
 <Trade
@@ -23,3 +25,12 @@
 	receive={{ label: 'Emerald', amount: 1 }}
 	note="This trade unlocks at Apprentice level. Any of the 16 dye colors counts toward this trade, though which colors are accepted expands further at Journeyman and Expert levels."
 />
+<AdSlot />
+<Footer />
+<div class="separator"></div>
+
+<style>
+	.separator {
+		height: 100px;
+	}
+</style>

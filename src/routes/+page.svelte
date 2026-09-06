@@ -1,20 +1,27 @@
 <script>
 	import '../app.css';
 	import { onMount } from 'svelte';
+	import { Capacitor } from '@capacitor/core';
+	import { AdMob } from '@capacitor-community/admob';
 	import { hasCompletedOnboarding } from '$lib/onboarding';
 	import { current } from '../shared.svelte';
 	import Welcome from '$lib/components/page-components/Welcome.svelte';
 	import Main from '$lib/components/page-components/Main.svelte';
-	import Premium from '$lib/components/page-components/Premium.svelte';
 	import Terms from '$lib/components/page-components/Terms.svelte';
 	import PrivacyPolicy from '$lib/components/page-components/PrivacyPolicy.svelte';
 
 	let ready = $state(false);
+
 	onMount(async () => {
 		const completed = await hasCompletedOnboarding();
 		current.page = completed ? 'main' : 'welcome';
-
 		ready = true;
+
+		if (Capacitor.isNativePlatform()) {
+			await AdMob.initialize({
+				initializeForTesting: true // ukloni/false pre objave na Play Store
+			});
+		}
 	});
 </script>
 
@@ -29,7 +36,5 @@
 		<Terms />
 	{:else if current.page === 'privacy'}
 		<PrivacyPolicy />
-	{:else if current.page == 'premium'}
-		<Premium />
 	{/if}
 {/if}
