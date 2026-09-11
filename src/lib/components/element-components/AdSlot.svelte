@@ -1,16 +1,37 @@
 <script module>
+	import { AdMob } from '@capacitor-community/admob';
+
 	let queue = Promise.resolve();
 
 	function enqueue(task) {
 		queue = queue.then(task).catch((e) => console.error('Ad queue error', e));
 		return queue;
 	}
+
+	// Registruje se jednom za ceo app. showBanner() se vraća uspešno čim se
+	// zahtev POŠALJE, ne kad se reklama STVARNO učita — pravi rezultat stiže
+	// ovde, asinhrono. Ako "bannerAdFailedToLoad" ispali, plugin tiho ukloni
+	// banner iz prikaza bez ijedne JS greške — zato ovo logujemo eksplicitno.
+	let listenersRegistered = false;
+	function registerAdListenersOnce() {
+		if (listenersRegistered) return;
+		listenersRegistered = true;
+
+		AdMob.addListener('bannerAdLoaded', () => {
+			console.log('[AdMob] banner loaded uspešno');
+		});
+
+		AdMob.addListener('bannerAdFailedToLoad', (info) => {
+			// info sadrži { code, message } -- code npr. 3 = ERROR_CODE_NO_FILL
+			console.error('[AdMob] banner FAILED to load:', JSON.stringify(info));
+		});
+	}
 </script>
 
 <script>
 	import { onDestroy } from 'svelte';
 	import { Capacitor } from '@capacitor/core';
-	import { AdMob, BannerAdPosition, BannerAdSize } from '@capacitor-community/admob';
+	import { BannerAdPosition, BannerAdSize } from '@capacitor-community/admob';
 	import { current } from '../../../shared.svelte';
 
 	let { adId = 'ca-app-pub-1543540069792476/4401869267' } = $props();

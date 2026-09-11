@@ -11,6 +11,20 @@ import {
 import { current } from '../shared.svelte';
 
 /**
+ * Device ID tvog telefona za testiranje. Prvi put kad pokreneš app na pravom
+ * ad unit ID-u (bez ovoga), Android Studio Logcat / `adb logcat | grep Ads`
+ * ispisaće nešto tipa:
+ *   "Use RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList("ABCD1234..."))
+ *   to get test ads on this device."
+ * Kopiraj taj string (ABCD1234...) ovde. Bez ovoga, pravi ad unit na tvom
+ * telefonu neće servirati ni test ni prave reklame dovoljno pouzdano dok
+ * app/ad unit ne "sazri" kod Google-a (može potrajati i do 24-48h za nov nalog).
+ */
+const TEST_DEVICE_IDS: string[] = [
+	'8F713B68DB116E07CCCE4C7DED6EC102'
+];
+
+/**
  * Pokreće Google UMP (User Messaging Platform) tok za GDPR/US privacy consent
  * i tek nakon toga (ako je dozvoljeno) inicijalizuje AdMob i pušta oglase.
  *
@@ -19,7 +33,7 @@ import { current } from '../shared.svelte';
  * Testiranje van EU/UK-a:
  * Da bi lokalno testirao formu (bez pravog EU uređaja), dodaj:
  *   debugGeography: AdmobConsentDebugGeography.EEA,
- *   testDeviceIdentifiers: ['TVOJ_TEST_DEVICE_ID']  // ispiše se u logcat-u pri prvom pokretanju
+ *   testDeviceIdentifiers: TEST_DEVICE_IDS
  * unutar requestConsentInfo() poziva ispod, i obavezno ukloni pre objave na Play Store.
  */
 export async function initializeConsentAndAds() {
@@ -41,7 +55,8 @@ export async function initializeConsentAndAds() {
 
 		if (info.canRequestAds) {
 			await AdMob.initialize({
-				initializeForTesting: true // ukloni/postavi na false pre objave na Play Store
+				initializeForTesting: TEST_DEVICE_IDS.length > 0, // ukloni/postavi na false pre objave na Play Store
+				testingDevices: TEST_DEVICE_IDS
 			});
 		}
 	} catch (e) {
