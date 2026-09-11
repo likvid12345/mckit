@@ -1,6 +1,15 @@
+<script>
+	import { current } from '../../../shared.svelte';
+	import { openPrivacyOptions } from '$lib/consent';
+</script>
+
 <div class="p-1">
 	<h1>Privacy Policy</h1>
 	<p class="updated">Last updated: August 18, 2026</p>
+
+	{#if current.privacyOptionsRequired}
+		<button class="privacy-options-button" onclick={openPrivacyOptions}> Manage ad consent </button>
+	{/if}
 
 	<p>
 		This Privacy Policy explains how <strong>MCKit</strong> ("the App", "we", "us", or "our") handles
@@ -180,7 +189,20 @@
 		.updated {
 			color: #666;
 			font-size: 14px;
-			margin-bottom: 32px;
+			margin-bottom: 12px;
+		}
+
+		.privacy-options-button {
+			display: inline-block;
+			margin-bottom: 24px;
+			padding: 10px 16px;
+			font-size: 14px;
+			font-weight: 600;
+			color: #fff;
+			background-color: #18181a;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
 		}
 
 		h2 {

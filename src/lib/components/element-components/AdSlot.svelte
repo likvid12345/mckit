@@ -8,16 +8,40 @@
 </script>
 
 <script>
-	import { onMount, onDestroy } from 'svelte';
+	import { onDestroy } from 'svelte';
 	import { Capacitor } from '@capacitor/core';
 	import { AdMob, BannerAdPosition, BannerAdSize } from '@capacitor-community/admob';
+	import { current } from '../../../shared.svelte';
 
-	let { adId = 'ca-app-pub-3940256099942544/6300978111' } = $props();
+	let { adId = 'ca-app-pub-1543540069792476/4401869267' } = $props();
 
 	let alive = false;
+	let shown = false;
 
-	onMount(() => {
+	onDestroy(() => {
+		alive = false;
+
+		if (shown) {
+			enqueue(async () => {
+				if (!Capacitor.isNativePlatform()) return;
+
+				try {
+					await AdMob.removeBanner();
+				} catch (e) {
+					// nema aktivnog banner-a, ignoriši
+				}
+			});
+		}
+	});
+
+	// GDPR/UMP: banner se prikazuje tek kad current.canRequestAds postane true
+	// (nakon što je consent tok u src/lib/consent.ts završen), ne pri samom mount-u.
+	$effect(() => {
 		alive = true;
+
+		if (!current.canRequestAds || shown) return;
+
+		shown = true;
 
 		enqueue(async () => {
 			if (!Capacitor.isNativePlatform()) return;
@@ -32,20 +56,6 @@
 				});
 			} catch (e) {
 				console.error('Banner show failed', e);
-			}
-		});
-	});
-
-	onDestroy(() => {
-		alive = false;
-
-		enqueue(async () => {
-			if (!Capacitor.isNativePlatform()) return;
-
-			try {
-				await AdMob.removeBanner();
-			} catch (e) {
-				// nema aktivnog banner-a, ignoriši
 			}
 		});
 	});

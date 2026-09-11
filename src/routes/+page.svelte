@@ -1,8 +1,7 @@
 <script>
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import { Capacitor } from '@capacitor/core';
-	import { AdMob } from '@capacitor-community/admob';
+	import { initializeConsentAndAds } from '$lib/consent';
 	import { hasCompletedOnboarding } from '$lib/onboarding';
 	import { current } from '../shared.svelte';
 	import Welcome from '$lib/components/page-components/Welcome.svelte';
@@ -17,11 +16,8 @@
 		current.page = completed ? 'main' : 'welcome';
 		ready = true;
 
-		if (Capacitor.isNativePlatform()) {
-			await AdMob.initialize({
-				initializeForTesting: true // ukloni/false pre objave na Play Store
-			});
-		}
+		// GDPR/UMP consent tok — mora ići pre AdMob.initialize(), koji se sad zove iznutra
+		await initializeConsentAndAds();
 	});
 </script>
 
