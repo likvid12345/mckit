@@ -27,7 +27,7 @@
 		'Enchants',
 		'Trims',
 		'Emerald Trades',
-		'VillagerCuring',
+		'Villager Curing',
 		'Coordinates',
 		'Hotkeys'
 	]);
@@ -63,7 +63,7 @@
 				<img class="general-sorter-image" src={emeraldtrade} alt="emeraldtrade" />
 			{:else if contentTab == 'Coordinates'}
 				<img class="general-sorter-image" src={coordinates} alt="coords" />
-			{:else if contentTab == 'VillagerCuring'}
+			{:else if contentTab == 'Villager Curing'}
 				<img class="general-sorter-image" src={goldenapple} alt="gepl" />
 			{/if}
 			{contentTab}</Button
